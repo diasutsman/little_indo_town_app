@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 1
-/// Strings: 8
+/// Strings: 17
 ///
-/// Built on 2024-06-18 at 11:37 UTC
+/// Built on 2024-06-19 at 15:18 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -148,6 +148,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 
 	// Translations
 	late final _StringsOnboardingEn onboarding = _StringsOnboardingEn._(_root);
+	late final _StringsHomeEn home = _StringsHomeEn._(_root);
 }
 
 // Path: onboarding
@@ -167,6 +168,24 @@ class _StringsOnboardingEn {
 	String get next => 'Next';
 }
 
+// Path: home
+class _StringsHomeEn {
+	_StringsHomeEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get menu => 'Menu';
+	String get login_to_claim => 'Log In to claim';
+	String get special_promo => 'Special Promo';
+	String get login_to_be_member => 'Log in and become a member to order';
+	String get login => 'Login';
+	String get hot_deals => 'HOT DEALS';
+	String get off => 'OFF';
+	String get perc20 => '20%';
+	String get order => 'Order';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -181,6 +200,15 @@ extension on Translations {
 			case 'onboarding.notification': return 'Always update promotions Little Indo Town';
 			case 'onboarding.notification_description': return 'Get notifications every time there is a promotion Little Indo Town to your cellphone';
 			case 'onboarding.next': return 'Next';
+			case 'home.menu': return 'Menu';
+			case 'home.login_to_claim': return 'Log In to claim';
+			case 'home.special_promo': return 'Special Promo';
+			case 'home.login_to_be_member': return 'Log in and become a member to order';
+			case 'home.login': return 'Login';
+			case 'home.hot_deals': return 'HOT DEALS';
+			case 'home.off': return 'OFF';
+			case 'home.perc20': return '20%';
+			case 'home.order': return 'Order';
 			default: return null;
 		}
 	}

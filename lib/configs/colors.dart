@@ -8,3 +8,7 @@ const colorWhite = Colors.white;
 
 const colorSecondary = Color(0xFFFFE675);
 const colorOnSecondary = Color(0xFFDB402F);
+
+//* Misc
+const colorLightGray = Color(0xFFE8E8E8);
+const colorLightYellow = Color(0xFFFFE675);

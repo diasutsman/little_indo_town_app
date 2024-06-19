@@ -8,5 +8,16 @@
         "notification": "Always update promotions Little Indo Town",
         "notification_description": "Get notifications every time there is a promotion Little Indo Town to your cellphone",
         "next": "Next"
+    },
+    "home": {
+        "menu": "Menu",
+        "login_to_claim": "Log In to claim",
+        "special_promo": "Special Promo",
+        "login_to_be_member": "Log in and become a member to order",
+        "login": "Login",
+        "hot_deals": "HOT DEALS",
+        "off": "OFF",
+        "perc20": "20%",
+        "order": "Order"
     }
 }
