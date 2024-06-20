@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:little_indo_town_app/features/auth/auth_page.dart';
+import 'package:little_indo_town_app/features/auth/components/auth_page_cubit.dart';
 import 'package:little_indo_town_app/features/home/home_page.dart';
 import 'package:little_indo_town_app/features/onboarding/components/cubit/onboarding_page_cubit.dart';
 import 'package:little_indo_town_app/features/onboarding/onboarding_page.dart';
@@ -7,6 +9,7 @@ import 'package:little_indo_town_app/features/onboarding/onboarding_page.dart';
 class Routes {
   static const String onboarding = '/onboarding';
   static const String home = '/';
+  static const String auth = '/auth';
 
   static final Map<String, Widget Function(BuildContext)> routes = {
     onboarding: (context) => BlocProvider(
@@ -14,6 +17,10 @@ class Routes {
           child: const OnboardingPage(),
         ),
     home: (context) => const HomePage(),
+    auth: (context) => BlocProvider(
+          create: (_) => AuthPageCubit(),
+          child: const AuthPage(),
+        ),
   };
 
   static get initialRoute => onboarding;

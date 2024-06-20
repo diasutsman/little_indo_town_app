@@ -40,7 +40,6 @@ dependencies:
   flutter_bloc: ^8.1.6
   carousel_slider: ^4.2.1
   dots_indicator: ^3.0.0
-  flutter_native_splash: ^2.4.0
 
 dev_dependencies:
   flutter_test:
@@ -53,6 +52,7 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^3.0.0
   flutter_launcher_icons: ^0.13.1
+  flutter_native_splash: ^2.4.0
 
 flutter_launcher_icons:
   android: "launcher_icon"

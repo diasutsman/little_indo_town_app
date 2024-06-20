@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 1
-/// Strings: 17
+/// Strings: 25
 ///
-/// Built on 2024-06-19 at 15:18 UTC
+/// Built on 2024-06-20 at 04:56 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -149,6 +149,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	// Translations
 	late final _StringsOnboardingEn onboarding = _StringsOnboardingEn._(_root);
 	late final _StringsHomeEn home = _StringsHomeEn._(_root);
+	late final _StringsAuthEn auth = _StringsAuthEn._(_root);
 }
 
 // Path: onboarding
@@ -186,6 +187,43 @@ class _StringsHomeEn {
 	String get order => 'Order';
 }
 
+// Path: auth
+class _StringsAuthEn {
+	_StringsAuthEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get welcome => 'WELCOME';
+	String get info => 'Become a member to order and pay in the app, receive great offers, and collect points for your purchases.';
+	late final _StringsAuthLoginEn login = _StringsAuthLoginEn._(_root);
+	late final _StringsAuthRegisterEn register = _StringsAuthRegisterEn._(_root);
+}
+
+// Path: auth.login
+class _StringsAuthLoginEn {
+	_StringsAuthLoginEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get login => 'LOGIN';
+}
+
+// Path: auth.register
+class _StringsAuthRegisterEn {
+	_StringsAuthRegisterEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get signup => 'SIGNUP';
+	String get next => 'NEXT';
+	String get create_an_account => 'CREATE AN ACCOUNT';
+	String get send => 'SEND';
+	String get done => 'DONE';
+}
+
 /// Flat map(s) containing all translations.
 /// Only for edge cases! For simple maps, use the map function of this library.
 
@@ -209,6 +247,14 @@ extension on Translations {
 			case 'home.off': return 'OFF';
 			case 'home.perc20': return '20%';
 			case 'home.order': return 'Order';
+			case 'auth.welcome': return 'WELCOME';
+			case 'auth.info': return 'Become a member to order and pay in the app, receive great offers, and collect points for your purchases.';
+			case 'auth.login.login': return 'LOGIN';
+			case 'auth.register.signup': return 'SIGNUP';
+			case 'auth.register.next': return 'NEXT';
+			case 'auth.register.create_an_account': return 'CREATE AN ACCOUNT';
+			case 'auth.register.send': return 'SEND';
+			case 'auth.register.done': return 'DONE';
 			default: return null;
 		}
 	}

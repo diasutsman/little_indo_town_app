@@ -30,7 +30,6 @@ class HomeCarouselCubit extends Cubit<int> {
   ];
 
   void onDotTapped(int position) {
-    print("position: $position");
     emit(position);
     carouselController.animateToPage(
       position,

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:little_indo_town_app/configs/assets.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
+import 'package:little_indo_town_app/configs/routes.dart';
 import 'package:little_indo_town_app/gen/strings.g.dart';
 
 class HomeToLoginWidget extends StatelessWidget {
@@ -20,7 +21,7 @@ class HomeToLoginWidget extends StatelessWidget {
           ),
         ],
         borderRadius: BorderRadius.circular(15),
-        color: colorLightYellow,
+        color: colorSecondary,
       ),
       child: Row(
         children: [
@@ -61,7 +62,9 @@ class HomeToLoginWidget extends StatelessWidget {
               SizedBox(
                 height: 32,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(context, Routes.auth);
+                  },
                   style: ElevatedButton.styleFrom(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 24,

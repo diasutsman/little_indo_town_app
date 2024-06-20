@@ -19,5 +19,19 @@
         "off": "OFF",
         "perc20": "20%",
         "order": "Order"
+    },
+    "auth": {
+        "welcome": "WELCOME",
+        "info": "Become a member to order and pay in the app, receive great offers, and collect points for your purchases.",
+        "login": {
+            "login": "LOGIN"
+        },
+        "register": {
+            "signup": "SIGNUP",
+            "next": "NEXT",
+            "create_an_account": "CREATE AN ACCOUNT",
+            "send": "SEND",
+            "done": "DONE"
+        }
     }
 }
