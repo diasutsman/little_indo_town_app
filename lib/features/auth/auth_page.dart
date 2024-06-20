@@ -21,11 +21,20 @@ class AuthPage extends StatelessWidget {
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(top: 95),
-              child: PageView.builder(
-                controller: authPageCubit.pageController,
-                onPageChanged: authPageCubit.onPageChanged,
-                itemCount: authPageCubit.pageCount,
-                itemBuilder: authPageCubit.pageBuilder,
+              child: BlocBuilder<AuthPageCubit, int>(
+                builder: (context, page) {
+                  return PopScope(
+                    canPop: authPageCubit.stackPages.isEmpty,
+                    onPopInvoked: authPageCubit.handleAuthPagesPop,
+                    child: PageView.builder(
+                      physics: const NeverScrollableScrollPhysics(),
+                      controller: authPageCubit.pageController,
+                      onPageChanged: authPageCubit.onPageChanged,
+                      itemCount: authPageCubit.pageCount,
+                      itemBuilder: authPageCubit.pageBuilder,
+                    ),
+                  );
+                },
               ),
             ),
           ),

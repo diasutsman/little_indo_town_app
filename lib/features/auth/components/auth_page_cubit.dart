@@ -34,6 +34,20 @@ class AuthPageCubit extends Cubit<int> {
   int get page => state;
   int get pageCount => _pages.length;
 
+  final List<int> _stackPages = [];
+  List<int> get stackPages => [..._stackPages];
+
+  void handleAuthPagesPop(bool didPop) {
+    if (didPop) {
+      return;
+    }
+    pageController.animateToPage(
+      _stackPages.removeLast(),
+      curve: Curves.fastOutSlowIn,
+      duration: const Duration(milliseconds: 800),
+    );
+  }
+
   void nextPage() {
     pageController.nextPage(
       duration: const Duration(milliseconds: 300),
@@ -46,13 +60,15 @@ class AuthPageCubit extends Cubit<int> {
   }
 
   Widget? pageBuilder(BuildContext context, int index) {
-    return _pages[index]; 
+    return _pages[index];
   }
 
   void gotoPage(int index) {
     if (0 > index || index >= _pages.length) {
       throw Exception("Invalid page index");
     }
+
+    _stackPages.add(page);
 
     pageController.animateToPage(
       index,
