@@ -11,3 +11,6 @@ const colorOnSecondary = Color(0xFFDB402F);
 
 //* Misc
 const colorLightGray = Color(0xFFE8E8E8);
+const colorLightGray2 = Color(0xFFB6B6B6);
+const colorLightGray3 = Color(0xFFCBCBCB);
+const colorDarkGray = Color(0xFF474747);

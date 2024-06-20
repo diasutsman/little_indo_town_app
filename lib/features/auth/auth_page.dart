@@ -121,6 +121,7 @@ class AuthPage extends StatelessWidget {
         ];
 
       case AuthPageCubit.loginPageIndex:
+        //TODO: add validation in form before loading to next page
         return [
           Expanded(
             child: ElevatedButton(

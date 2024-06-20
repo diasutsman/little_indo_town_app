@@ -24,7 +24,13 @@
         "welcome": "WELCOME",
         "info": "Become a member to order and pay in the app, receive great offers, and collect points for your purchases.",
         "login": {
-            "login": "LOGIN"
+            "login": "LOGIN",
+            "email": "Email",
+            "password": "Password",
+            "forgot_password": "Forgot password ?",
+            "not_a_member": "Not a member yet?",
+            "sign_up": "SIGN UP",
+            "text": "Entered into things that interesting"
         },
         "register": {
             "signup": "SIGNUP",

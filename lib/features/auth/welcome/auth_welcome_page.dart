@@ -11,7 +11,7 @@ class AuthWelcomePage extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(38),
       child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Image.asset(

@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 1
-/// Strings: 25
+/// Strings: 31
 ///
-/// Built on 2024-06-20 at 04:56 UTC
+/// Built on 2024-06-20 at 06:20 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -208,6 +208,12 @@ class _StringsAuthLoginEn {
 
 	// Translations
 	String get login => 'LOGIN';
+	String get email => 'Email';
+	String get password => 'Password';
+	String get forgot_password => 'Forgot password ?';
+	String get not_a_member => 'Not a member yet?';
+	String get sign_up => 'SIGN UP';
+	String get text => 'Entered into things that interesting';
 }
 
 // Path: auth.register
@@ -250,6 +256,12 @@ extension on Translations {
 			case 'auth.welcome': return 'WELCOME';
 			case 'auth.info': return 'Become a member to order and pay in the app, receive great offers, and collect points for your purchases.';
 			case 'auth.login.login': return 'LOGIN';
+			case 'auth.login.email': return 'Email';
+			case 'auth.login.password': return 'Password';
+			case 'auth.login.forgot_password': return 'Forgot password ?';
+			case 'auth.login.not_a_member': return 'Not a member yet?';
+			case 'auth.login.sign_up': return 'SIGN UP';
+			case 'auth.login.text': return 'Entered into things that interesting';
 			case 'auth.register.signup': return 'SIGNUP';
 			case 'auth.register.next': return 'NEXT';
 			case 'auth.register.create_an_account': return 'CREATE AN ACCOUNT';
