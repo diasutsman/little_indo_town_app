@@ -17,7 +17,7 @@ class OnboardingPageCubit extends Cubit<int> {
 
   void nextPage({required BuildContext context}) {
     if (page == 2) {
-      Navigator.pushReplacementNamed(context, Routes.home);
+      Navigator.pushReplacementNamed(context, Routes.main);
       return;
     }
     pageController.nextPage(

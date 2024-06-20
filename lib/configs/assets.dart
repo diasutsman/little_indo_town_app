@@ -21,6 +21,8 @@ class Assets {
 class AssetsIcons {
   final String appIcon = 'assets/icon/icon.png';
   final String appIconWhite = 'assets/icon/icon-white.png';
+  final String appIconSmall = 'assets/icon/app-icon-small.png';
+  final String appIconSmallActive = 'assets/icon/app-icon-small-active.png';
 }
 
 class AssetsImages {

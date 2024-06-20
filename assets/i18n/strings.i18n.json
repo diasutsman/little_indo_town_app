@@ -20,6 +20,13 @@
         "perc20": "20%",
         "order": "Order"
     },
+    "main_menu": {
+        "home": "Home",
+        "menu": "Menu",
+        "order": "Order",
+        "restaurant": "Restaurant",
+        "profile": "Profile"
+    },
     "auth": {
         "welcome": "WELCOME",
         "info": "Become a member to order and pay in the app, receive great offers, and collect points for your purchases.",

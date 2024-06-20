@@ -4,10 +4,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:little_indo_town_app/components/app_logged_in_cubit.dart';
 import 'package:little_indo_town_app/configs/assets.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
-import 'package:little_indo_town_app/features/home/widgets/components/home_carousel_cubit.dart';
-import 'package:little_indo_town_app/features/home/widgets/home_carousel_widget.dart';
-import 'package:little_indo_town_app/features/home/widgets/home_off20_widget.dart';
-import 'package:little_indo_town_app/features/home/widgets/home_to_login_widget.dart';
+import 'package:little_indo_town_app/features/main/home/widgets/components/home_carousel_cubit.dart';
+import 'package:little_indo_town_app/features/main/home/widgets/home_carousel_widget.dart';
+import 'package:little_indo_town_app/features/main/home/widgets/home_off20_widget.dart';
+import 'package:little_indo_town_app/features/main/home/widgets/home_to_login_widget.dart';
 import 'package:little_indo_town_app/gen/strings.g.dart';
 
 class HomePage extends StatelessWidget {

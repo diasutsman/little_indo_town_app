@@ -276,7 +276,7 @@ class AuthPage extends StatelessWidget {
     context.read<AppLoggedInCubit>().login();
     Navigator.pushNamedAndRemoveUntil(
       context,
-      Routes.home,
+      Routes.main,
       (route) {
         return false;
       },

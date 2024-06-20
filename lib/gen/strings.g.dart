@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 1
-/// Strings: 47
+/// Strings: 52
 ///
-/// Built on 2024-06-20 at 07:38 UTC
+/// Built on 2024-06-20 at 08:19 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -149,6 +149,7 @@ class Translations implements BaseTranslations<AppLocale, Translations> {
 	// Translations
 	late final _StringsOnboardingEn onboarding = _StringsOnboardingEn._(_root);
 	late final _StringsHomeEn home = _StringsHomeEn._(_root);
+	late final _StringsMainMenuEn main_menu = _StringsMainMenuEn._(_root);
 	late final _StringsAuthEn auth = _StringsAuthEn._(_root);
 }
 
@@ -185,6 +186,20 @@ class _StringsHomeEn {
 	String get off => 'OFF';
 	String get perc20 => '20%';
 	String get order => 'Order';
+}
+
+// Path: main_menu
+class _StringsMainMenuEn {
+	_StringsMainMenuEn._(this._root);
+
+	final Translations _root; // ignore: unused_field
+
+	// Translations
+	String get home => 'Home';
+	String get menu => 'Menu';
+	String get order => 'Order';
+	String get restaurant => 'Restaurant';
+	String get profile => 'Profile';
 }
 
 // Path: auth
@@ -269,6 +284,11 @@ extension on Translations {
 			case 'home.off': return 'OFF';
 			case 'home.perc20': return '20%';
 			case 'home.order': return 'Order';
+			case 'main_menu.home': return 'Home';
+			case 'main_menu.menu': return 'Menu';
+			case 'main_menu.order': return 'Order';
+			case 'main_menu.restaurant': return 'Restaurant';
+			case 'main_menu.profile': return 'Profile';
 			case 'auth.welcome': return 'WELCOME';
 			case 'auth.info': return 'Become a member to order and pay in the app, receive great offers, and collect points for your purchases.';
 			case 'auth.login.login': return 'LOGIN';

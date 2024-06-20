@@ -3,7 +3,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
-import 'package:little_indo_town_app/features/home/widgets/components/home_carousel_cubit.dart';
+import 'package:little_indo_town_app/features/main/home/widgets/components/home_carousel_cubit.dart';
 
 class HomeCarouselWidget extends StatelessWidget {
   const HomeCarouselWidget({super.key});
