@@ -11,43 +11,51 @@ class HomeCarouselWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final HomeCarouselCubit homeCarouselCubit = context.read();
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.only(
-            top: 80,
-            bottom: 24,
-          ),
-          child: CarouselSlider(
-            carouselController: homeCarouselCubit.carouselController,
-            options: CarouselOptions(
-              autoPlay: true,
-              aspectRatio: 354 / 156,
-              onPageChanged: homeCarouselCubit.onPageChanged,
-              // viewportFraction: 0.91,
-              viewportFraction: 1,
+    return Container(
+      decoration: const BoxDecoration(
+        color: colorPrimary,
+      ),
+      child: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.only(
+              top: 80,
+              bottom: 24,
             ),
-            items: homeCarouselCubit.items,
-          ),
-        ),
-        const SizedBox(
-          height: 24,
-        ),
-        BlocBuilder<HomeCarouselCubit, int>(
-          builder: (context, state) => DotsIndicator(
-            decorator: const DotsDecorator(
-              color: colorLightGray,
-              activeColor: colorSecondary,
-              spacing: EdgeInsets.symmetric(horizontal: 4.5),
-              activeSize: Size(16, 16),
-              size: Size(16, 16),
+            child: CarouselSlider(
+              carouselController: homeCarouselCubit.carouselController,
+              options: CarouselOptions(
+                autoPlay: true,
+                aspectRatio: 354 / 156,
+                onPageChanged: homeCarouselCubit.onPageChanged,
+                // viewportFraction: 0.91,
+                viewportFraction: 1,
+              ),
+              items: homeCarouselCubit.items,
             ),
-            onTap: homeCarouselCubit.onDotTapped,
-            dotsCount: homeCarouselCubit.items.length,
-            position: state,
           ),
-        )
-      ],
+          const SizedBox(
+            height: 24,
+          ),
+          BlocBuilder<HomeCarouselCubit, int>(
+            builder: (context, state) => DotsIndicator(
+              decorator: const DotsDecorator(
+                color: colorLightGray,
+                activeColor: colorSecondary,
+                spacing: EdgeInsets.symmetric(horizontal: 4.5),
+                activeSize: Size(16, 16),
+                size: Size(16, 16),
+              ),
+              onTap: homeCarouselCubit.onDotTapped,
+              dotsCount: homeCarouselCubit.items.length,
+              position: state,
+            ),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+        ],
+      ),
     );
   }
 }

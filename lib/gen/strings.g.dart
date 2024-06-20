@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 1
-/// Strings: 31
+/// Strings: 47
 ///
-/// Built on 2024-06-20 at 06:20 UTC
+/// Built on 2024-06-20 at 07:38 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -226,8 +226,24 @@ class _StringsAuthRegisterEn {
 	String get signup => 'SIGNUP';
 	String get next => 'NEXT';
 	String get create_an_account => 'CREATE AN ACCOUNT';
+	String get create_your_account => 'Create your account';
+	String get password_rules => 'Include one number\nInclude upper and lower case characters\nPassword must be at least 8 characters';
 	String get send => 'SEND';
 	String get done => 'DONE';
+	String get email => '*Email';
+	String get enter_password => 'Enter password';
+	String get personal_data => 'Personal data';
+	String get fiil_in => 'Please fill in your login.';
+	String get required_info => '*required information';
+	String get first_name => '*First name';
+	String get last_name => '*Last name';
+	String get check_email => 'Check your email';
+	String get check_email_info => 'We have sent an email to albert@gmail.com\nwith a 6 digit code. this takes some time \nminutes to receive. Please enter the code below\nhere or tap the link in the email';
+	String get check_email_6_digit_code => '6 digit code';
+	String get didnt_get_the_code => 'Didn\'t get the code?';
+	String get resend_code => 'Resend code';
+	String get welcome_to_the_club => 'Welcome to the club!';
+	String get welcome_congratulation => 'Congratulations on registering. Take a look at some \nproducts to know its delicious taste!';
 }
 
 /// Flat map(s) containing all translations.
@@ -265,8 +281,24 @@ extension on Translations {
 			case 'auth.register.signup': return 'SIGNUP';
 			case 'auth.register.next': return 'NEXT';
 			case 'auth.register.create_an_account': return 'CREATE AN ACCOUNT';
+			case 'auth.register.create_your_account': return 'Create your account';
+			case 'auth.register.password_rules': return 'Include one number\nInclude upper and lower case characters\nPassword must be at least 8 characters';
 			case 'auth.register.send': return 'SEND';
 			case 'auth.register.done': return 'DONE';
+			case 'auth.register.email': return '*Email';
+			case 'auth.register.enter_password': return 'Enter password';
+			case 'auth.register.personal_data': return 'Personal data';
+			case 'auth.register.fiil_in': return 'Please fill in your login.';
+			case 'auth.register.required_info': return '*required information';
+			case 'auth.register.first_name': return '*First name';
+			case 'auth.register.last_name': return '*Last name';
+			case 'auth.register.check_email': return 'Check your email';
+			case 'auth.register.check_email_info': return 'We have sent an email to albert@gmail.com\nwith a 6 digit code. this takes some time \nminutes to receive. Please enter the code below\nhere or tap the link in the email';
+			case 'auth.register.check_email_6_digit_code': return '6 digit code';
+			case 'auth.register.didnt_get_the_code': return 'Didn\'t get the code?';
+			case 'auth.register.resend_code': return 'Resend code';
+			case 'auth.register.welcome_to_the_club': return 'Welcome to the club!';
+			case 'auth.register.welcome_congratulation': return 'Congratulations on registering. Take a look at some \nproducts to know its delicious taste!';
 			default: return null;
 		}
 	}

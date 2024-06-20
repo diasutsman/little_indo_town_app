@@ -16,6 +16,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: colorWhite,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -23,12 +24,8 @@ class HomePage extends StatelessWidget {
               create: (context) => HomeCarouselCubit(),
               child: const HomeCarouselWidget(),
             ),
-            const SizedBox(
-              height: 8,
-            ),
-            Container(
+            Padding(
               padding: const EdgeInsets.all(20),
-              decoration: const BoxDecoration(color: colorWhite),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -81,7 +78,6 @@ class HomePage extends StatelessWidget {
           ],
         ),
       ),
-      backgroundColor: colorPrimary,
     );
   }
 }

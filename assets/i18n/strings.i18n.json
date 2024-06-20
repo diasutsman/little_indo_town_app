@@ -36,8 +36,24 @@
             "signup": "SIGNUP",
             "next": "NEXT",
             "create_an_account": "CREATE AN ACCOUNT",
+            "create_your_account": "Create your account",
+            "password_rules": "Include one number\nInclude upper and lower case characters\nPassword must be at least 8 characters",
             "send": "SEND",
-            "done": "DONE"
+            "done": "DONE",
+            "email": "*Email",
+            "enter_password": "Enter password",
+            "personal_data": "Personal data",
+            "fiil_in": "Please fill in your login.",
+            "required_info": "*required information",
+            "first_name": "*First name",
+            "last_name": "*Last name",
+            "check_email": "Check your email",
+            "check_email_info": "We have sent an email to albert@gmail.com\nwith a 6 digit code. this takes some time \nminutes to receive. Please enter the code below\nhere or tap the link in the email",
+            "check_email_6_digit_code": "6 digit code",
+            "didnt_get_the_code": "Didn't get the code?",
+            "resend_code": "Resend code",
+            "welcome_to_the_club": "Welcome to the club!",
+            "welcome_congratulation": "Congratulations on registering. Take a look at some \nproducts to know its delicious taste!"
         }
     }
 }

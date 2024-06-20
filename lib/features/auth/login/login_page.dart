@@ -81,6 +81,7 @@ class LoginPage extends StatelessWidget {
                 height: 50,
                 child: TextFormField(
                   keyboardType: TextInputType.visiblePassword,
+                  obscureText: true,
                   decoration: InputDecoration(
                     hintText: t.auth.login.password,
                     border: const OutlineInputBorder(
