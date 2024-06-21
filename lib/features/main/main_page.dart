@@ -6,6 +6,7 @@ import 'package:little_indo_town_app/configs/colors.dart';
 import 'package:little_indo_town_app/configs/routes.dart';
 import 'package:little_indo_town_app/features/main/cubit/main_cubit.dart';
 import 'package:little_indo_town_app/features/main/home/home_page.dart';
+import 'package:little_indo_town_app/features/main/menu/menu_page.dart';
 import 'package:little_indo_town_app/gen/strings.g.dart';
 
 class MainPage extends StatelessWidget {
@@ -19,7 +20,7 @@ class MainPage extends StatelessWidget {
         index: selectedTab.index,
         children: const [
           HomePage(),
-          HomePage(),
+          MenuPage(),
           HomePage(),
           HomePage(),
           HomePage(),
@@ -27,7 +28,8 @@ class MainPage extends StatelessWidget {
       ),
       bottomNavigationBar: BottomAppBar(
         color: colorWhite,
-        padding: const EdgeInsets.only(top: 16),
+        height: 75,
+        padding: EdgeInsets.zero,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -71,28 +73,6 @@ class MainPage extends StatelessWidget {
   }
 }
 
-// BottomNavigationBarItem(
-//           icon = const Icon(Icons.home),
-//           label = t.main_menu.home,
-//         ),
-//         BottomNavigationBarItem(
-//           icon = const Icon(Icons.import_contacts_rounded),
-//           label = t.main_menu.menu,
-//         ),
-//         BottomNavigationBarItem(
-//           icon = const Icon(Icons.list),
-//           label = t.main_menu.order,
-//         ),
-//         BottomNavigationBarItem(
-//           icon = const Icon(Icons.location_on),
-//           label = t.main_menu.restaurant,
-//         ),
-//         BottomNavigationBarItem(
-//           icon = const Icon(Icons.person),
-//           label = t.main_menu.profile,
-//         ),
-//       ],
-
 class _HomeTabButton extends StatelessWidget {
   const _HomeTabButton({
     required this.groupValue,
@@ -115,7 +95,7 @@ class _HomeTabButton extends StatelessWidget {
       iconSize: 32,
       color: groupValue != value ? colorDarkGray2 : colorPrimary,
       icon: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           icon,

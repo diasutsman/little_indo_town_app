@@ -41,10 +41,7 @@ class MyApp extends StatelessWidget {
           // tested with just a hot reload.
           colorScheme: ColorScheme.fromSeed(seedColor: colorPrimary),
           primaryColor: colorPrimary,
-          secondaryHeaderColor: colorSecondary,
           useMaterial3: true,
-          splashColor: colorSecondary,
-          highlightColor: colorSecondary,
           fontFamily: Assets.fonts.normsPro,
         ),
         onGenerateRoute: Routes.onGenerateRoute,
