@@ -6,7 +6,10 @@ import 'package:little_indo_town_app/configs/colors.dart';
 import 'package:little_indo_town_app/configs/routes.dart';
 import 'package:little_indo_town_app/features/main/cubit/main_cubit.dart';
 import 'package:little_indo_town_app/features/main/home/home_page.dart';
+import 'package:little_indo_town_app/features/main/location/location_page.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_page.dart';
+import 'package:little_indo_town_app/features/main/order/order_page.dart';
+import 'package:little_indo_town_app/features/main/profile/profile_page.dart';
 import 'package:little_indo_town_app/gen/strings.g.dart';
 
 class MainPage extends StatelessWidget {
@@ -21,9 +24,9 @@ class MainPage extends StatelessWidget {
         children: const [
           HomePage(),
           MenuPage(),
-          HomePage(),
-          HomePage(),
-          HomePage(),
+          OrderPage(),
+          LocationPage(),
+          ProfilePage(),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
