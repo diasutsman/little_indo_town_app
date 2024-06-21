@@ -344,7 +344,7 @@ class MenuPage extends StatelessWidget {
         leading: Builder(
           builder: (context) {
             return IconButton(
-              padding: EdgeInsets.zero,
+              padding: const EdgeInsets.only(left: 12),
               constraints:
                   const BoxConstraints(), // override default min size of 48px
               style: const ButtonStyle(
@@ -484,7 +484,7 @@ class MenuPage extends StatelessWidget {
               style: GoogleFonts.montserrat(
                 color: colorPrimary,
                 fontWeight: FontWeight.w800,
-                fontSize: 10,
+                fontSize: 14,
               ),
             ),
             const SizedBox(
@@ -531,7 +531,7 @@ class MenuPage extends StatelessWidget {
                       style: GoogleFonts.montserrat(
                         color: colorPrimary,
                         fontWeight: FontWeight.w800,
-                        fontSize: 10,
+                        fontSize: 14,
                       ),
                     ),
                     InkWell(
@@ -543,7 +543,7 @@ class MenuPage extends StatelessWidget {
                             "See All",
                             style: GoogleFonts.montserrat(
                               fontWeight: FontWeight.w800,
-                              fontSize: 10,
+                              fontSize: 12,
                               color: colorBlack,
                             ),
                           ),
@@ -591,7 +591,7 @@ class MenuPage extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w400,
-                                    fontSize: 12,
+                                    fontSize: 14,
                                     color: colorWhite,
                                     fontFamily: Assets.fonts.elikaGorica,
                                   ),
@@ -628,7 +628,7 @@ class MenuPage extends StatelessWidget {
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w400,
-                                    fontSize: 12,
+                                    fontSize: 14,
                                     color: colorWhite,
                                     fontFamily: Assets.fonts.elikaGorica,
                                   ),
@@ -650,7 +650,7 @@ class MenuPage extends StatelessWidget {
                         child: Stack(
                           children: [
                             Image.asset(
-                              Assets.images.individualServer,
+                              Assets.images.individualServe,
                             ),
                             Positioned.fill(
                               child: Container(
@@ -661,11 +661,11 @@ class MenuPage extends StatelessWidget {
                               child: Align(
                                 alignment: Alignment.center,
                                 child: Text(
-                                  "Individual serve",
+                                  "Individual\nServe",
                                   textAlign: TextAlign.center,
                                   style: TextStyle(
                                     fontWeight: FontWeight.w400,
-                                    fontSize: 12,
+                                    fontSize: 14,
                                     color: colorWhite,
                                     fontFamily: Assets.fonts.elikaGorica,
                                   ),
@@ -695,7 +695,7 @@ class MenuPage extends StatelessWidget {
                       style: GoogleFonts.montserrat(
                         color: colorPrimary,
                         fontWeight: FontWeight.w800,
-                        fontSize: 10,
+                        fontSize: 14,
                       ),
                     ),
                     InkWell(
@@ -707,7 +707,7 @@ class MenuPage extends StatelessWidget {
                             "See All",
                             style: GoogleFonts.montserrat(
                               fontWeight: FontWeight.w800,
-                              fontSize: 10,
+                              fontSize: 12,
                               color: colorBlack,
                             ),
                           ),
@@ -750,6 +750,7 @@ class MenuPage extends StatelessWidget {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
                               ),
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
                               child: Image.asset(
                                 Assets.images.crispyChicken,
                                 width: 109.29,
@@ -759,7 +760,7 @@ class MenuPage extends StatelessWidget {
                               height: 16,
                             ),
                             Container(
-                              height: 15,
+                              height: 20,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
                                 border: Border.all(
@@ -776,7 +777,7 @@ class MenuPage extends StatelessWidget {
                                 children: [
                                   const Icon(
                                     Icons.star,
-                                    size: 14,
+                                    size: 16,
                                     color: colorPrimary2,
                                   ),
                                   const SizedBox(
@@ -786,7 +787,7 @@ class MenuPage extends StatelessWidget {
                                     "10 Poin",
                                     style: GoogleFonts.montserrat(
                                       fontWeight: FontWeight.w800,
-                                      fontSize: 8,
+                                      fontSize: 10,
                                       color: colorPrimary2,
                                     ),
                                   ),
@@ -800,7 +801,7 @@ class MenuPage extends StatelessWidget {
                               "Crispy Chicken",
                               style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w400,
-                                fontSize: 8,
+                                fontSize: 10,
                                 color: colorPrimary2,
                               ),
                             ),
@@ -808,7 +809,7 @@ class MenuPage extends StatelessWidget {
                               "Burger",
                               style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w400,
-                                fontSize: 5,
+                                fontSize: 8,
                                 color: colorDarkGray3,
                               ),
                             ),
@@ -840,6 +841,7 @@ class MenuPage extends StatelessWidget {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
                               ),
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
                               child: Image.asset(
                                 Assets.images.crispyChicken,
                                 width: 109.29,
@@ -849,7 +851,7 @@ class MenuPage extends StatelessWidget {
                               height: 16,
                             ),
                             Container(
-                              height: 15,
+                              height: 20,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
                                 border: Border.all(
@@ -866,7 +868,7 @@ class MenuPage extends StatelessWidget {
                                 children: [
                                   const Icon(
                                     Icons.star,
-                                    size: 14,
+                                    size: 16,
                                     color: colorPrimary2,
                                   ),
                                   const SizedBox(
@@ -876,7 +878,7 @@ class MenuPage extends StatelessWidget {
                                     "10 Poin",
                                     style: GoogleFonts.montserrat(
                                       fontWeight: FontWeight.w800,
-                                      fontSize: 8,
+                                      fontSize: 10,
                                       color: colorPrimary2,
                                     ),
                                   ),
@@ -890,7 +892,7 @@ class MenuPage extends StatelessWidget {
                               "Crispy Chicken",
                               style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w400,
-                                fontSize: 8,
+                                fontSize: 10,
                                 color: colorPrimary2,
                               ),
                             ),
@@ -898,7 +900,7 @@ class MenuPage extends StatelessWidget {
                               "Burger",
                               style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w400,
-                                fontSize: 5,
+                                fontSize: 8,
                                 color: colorDarkGray3,
                               ),
                             ),
@@ -930,6 +932,7 @@ class MenuPage extends StatelessWidget {
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(15),
                               ),
+                              clipBehavior: Clip.antiAliasWithSaveLayer,
                               child: Image.asset(
                                 Assets.images.crispyChicken,
                                 width: 109.29,
@@ -939,7 +942,7 @@ class MenuPage extends StatelessWidget {
                               height: 16,
                             ),
                             Container(
-                              height: 15,
+                              height: 20,
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(12),
                                 border: Border.all(
@@ -956,7 +959,7 @@ class MenuPage extends StatelessWidget {
                                 children: [
                                   const Icon(
                                     Icons.star,
-                                    size: 14,
+                                    size: 16,
                                     color: colorPrimary2,
                                   ),
                                   const SizedBox(
@@ -966,7 +969,7 @@ class MenuPage extends StatelessWidget {
                                     "10 Poin",
                                     style: GoogleFonts.montserrat(
                                       fontWeight: FontWeight.w800,
-                                      fontSize: 8,
+                                      fontSize: 10,
                                       color: colorPrimary2,
                                     ),
                                   ),
@@ -980,7 +983,7 @@ class MenuPage extends StatelessWidget {
                               "Crispy Chicken",
                               style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w400,
-                                fontSize: 8,
+                                fontSize: 10,
                                 color: colorPrimary2,
                               ),
                             ),
@@ -988,7 +991,7 @@ class MenuPage extends StatelessWidget {
                               "Burger",
                               style: GoogleFonts.montserrat(
                                 fontWeight: FontWeight.w400,
-                                fontSize: 5,
+                                fontSize: 8,
                                 color: colorDarkGray3,
                               ),
                             ),

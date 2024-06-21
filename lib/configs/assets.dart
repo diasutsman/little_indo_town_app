@@ -36,7 +36,7 @@ class AssetsImages {
   final String homeOff20 = 'assets/images/home-off20.png';
   final String poin = 'assets/images/poin.png';
   final String breakfast = 'assets/images/breakfast.png';
-  final String individualServer = 'assets/images/individual-serve.png';
+  final String individualServe = 'assets/images/individual-serve.png';
   final String lunch = 'assets/images/lunch.png';
   final String crispyChicken = 'assets/images/crispy-chicken.png';
 }
