@@ -24,6 +24,7 @@ class AssetsIcons {
   final String appIconSmall = 'assets/icon/app-icon-small.png';
   final String appIconSmallActive = 'assets/icon/app-icon-small-active.png';
   final String star = 'assets/icon/star.png';
+  final String restaurantLocation = 'assets/icon/restaurant-location.png';
 }
 
 class AssetsImages {
@@ -39,6 +40,7 @@ class AssetsImages {
   final String individualServe = 'assets/images/individual-serve.png';
   final String lunch = 'assets/images/lunch.png';
   final String crispyChicken = 'assets/images/crispy-chicken.png';
+  final String restaurantMap = 'assets/images/restaurant-map.png';
 }
 
 class AssetsFonts {

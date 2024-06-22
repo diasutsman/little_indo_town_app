@@ -366,27 +366,6 @@ class MenuPage extends StatelessWidget {
                 Expanded(
                   child: InkWell(
                     onTap: () {
-                      // Navigator.push(
-                      //     context,
-                      //     PageRouteBuilder(
-                      //       pageBuilder: (context, animation, secondaryAnimation) =>
-                      //           const YourPointPage(),
-                      //       transitionsBuilder:
-                      //           (context, animation, secondaryAnimation, child) {
-                      //         const begin = Offset(0.1, 0.0);
-                      //         const end = Offset.zero;
-                      //         const curve = Curves.fastOutSlowIn;
-
-                      //         var tween = Tween(begin: begin, end: end).chain(
-                      //           CurveTween(curve: curve),
-                      //         );
-
-                      //         return SlideTransition(
-                      //           position: animation.drive(tween),
-                      //           child: child,
-                      //         );
-                      //       },
-                      //     ));
                       Scaffold.of(context).openEndDrawer();
                     },
                     child: Row(

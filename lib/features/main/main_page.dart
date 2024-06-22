@@ -6,6 +6,7 @@ import 'package:little_indo_town_app/configs/colors.dart';
 import 'package:little_indo_town_app/configs/routes.dart';
 import 'package:little_indo_town_app/features/main/cubit/main_cubit.dart';
 import 'package:little_indo_town_app/features/main/home/home_page.dart';
+import 'package:little_indo_town_app/features/main/location/location_cubit.dart';
 import 'package:little_indo_town_app/features/main/location/location_page.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_page.dart';
 import 'package:little_indo_town_app/features/main/order/order_page.dart';
@@ -21,12 +22,15 @@ class MainPage extends StatelessWidget {
     return Scaffold(
       body: IndexedStack(
         index: selectedTab.index,
-        children: const [
-          HomePage(),
-          MenuPage(),
-          OrderPage(),
-          LocationPage(),
-          ProfilePage(),
+        children: [
+          const HomePage(),
+          const MenuPage(),
+          const OrderPage(),
+          BlocProvider(
+            create: (context) => LocationCubit(),
+            child: const LocationPage(),
+          ),
+          const ProfilePage(),
         ],
       ),
       bottomNavigationBar: BottomAppBar(
