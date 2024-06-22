@@ -7,9 +7,9 @@ import 'package:little_indo_town_app/configs/colors.dart';
 import 'package:little_indo_town_app/features/main/home/widgets/home_off20_widget.dart';
 import 'package:little_indo_town_app/features/main/menu/cubit/menu_cubit.dart';
 import 'package:little_indo_town_app/features/main/menu/main_menu_page.dart';
-import 'package:little_indo_town_app/features/main/menu/menu_drawer.dart';
+import 'package:little_indo_town_app/features/main/components/menu_drawer.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_routes.dart';
-import 'package:little_indo_town_app/features/main/menu/your_point_page.dart';
+import 'package:little_indo_town_app/features/main/components/your_point_page.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -129,6 +129,7 @@ class MenuPage extends StatelessWidget {
             }),
           ],
         ),
+       
         body: Navigator(
           key: menuPageCubit.navigatorKey,
           initialRoute: MenuRoutes.mainMenuRoute,

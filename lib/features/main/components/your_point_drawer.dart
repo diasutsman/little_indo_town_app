@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
-import 'package:little_indo_town_app/features/main/menu/your_point_page.dart';
+import 'package:little_indo_town_app/features/main/components/your_point_page.dart';
 
 class YourPointDrawer extends StatelessWidget {
   const YourPointDrawer({super.key});

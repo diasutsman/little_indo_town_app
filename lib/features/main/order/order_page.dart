@@ -3,9 +3,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:little_indo_town_app/configs/assets.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
+import 'package:little_indo_town_app/features/main/components/menu_drawer.dart';
+import 'package:little_indo_town_app/features/main/components/your_point_page.dart';
 import 'package:little_indo_town_app/features/main/cubit/main_cubit.dart';
 import 'package:little_indo_town_app/features/main/location/location_cubit.dart';
 import 'package:little_indo_town_app/features/main/location/location_item.dart';
+import 'package:little_indo_town_app/features/main/menu/cubit/menu_cubit.dart';
 import 'package:little_indo_town_app/features/main/order/order_cubit.dart';
 import 'package:little_indo_town_app/features/main/order/order_item.dart';
 import 'package:little_indo_town_app/gen/strings.g.dart';
@@ -15,173 +18,303 @@ class OrderPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final OrderCubit orderCubit = context.read();
     return Scaffold(
+      drawer: const MenuDrawer(),
+      endDrawer: const YourPointPage(),
       appBar: AppBar(
         surfaceTintColor: colorTransparent,
         shadowColor: colorTransparent,
         scrolledUnderElevation: 0,
         backgroundColor: colorWhite,
-        automaticallyImplyLeading: false,
-        toolbarHeight: 80,
-        title: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Image.asset(
-              Assets.icons.appIcon,
-              height: 35,
-            ),
-            const SizedBox(
-              height: 7,
-            ),
-            Text(
-              t.main_menu.order,
-              style: GoogleFonts.montserrat(
-                fontWeight: FontWeight.w800,
-                fontSize: 20,
-                color: colorPrimary,
+        leading: Builder(
+          builder: (context) {
+            return IconButton(
+              padding: const EdgeInsets.only(left: 12),
+              constraints:
+                  const BoxConstraints(), // override default min size of 48px
+              style: const ButtonStyle(
+                tapTargetSize:
+                    MaterialTapTargetSize.shrinkWrap, // the '2023' part
               ),
-            ),
-          ],
+              iconSize: 26,
+              icon: const Icon(Icons.menu),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+            );
+          },
         ),
         actions: [
-          IconButton(
-            onPressed: () {
-              // orderCubit.searchController.openView();
-              showSearch(context: context, delegate: _SearchItem());
-            },
-            icon: const Icon(Icons.search_rounded),
-            iconSize: 34,
-          ),
+          Builder(builder: (context) {
+            return Column(
+              children: [
+                Expanded(
+                  child: InkWell(
+                    onTap: () {
+                      Scaffold.of(context).openEndDrawer();
+                    },
+                    child: Row(
+                      children: [
+                        const Icon(
+                          Icons.shopping_bag,
+                          color: colorPrimary2,
+                        ),
+                        Text(
+                          "0 point",
+                          style: GoogleFonts.montserrat(
+                            fontWeight: FontWeight.w800,
+                            fontSize: 15,
+                            color: colorBlack,
+                          ),
+                        ),
+                        const Icon(
+                          Icons.chevron_right_rounded,
+                          color: colorBlack,
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            );
+          }),
         ],
       ),
-      body: Stack(
-        children: [
-          Positioned.fill(
-            child: Image.asset(
-              Assets.images.restaurantMap,
-              fit: BoxFit.cover,
+      backgroundColor: colorWhite2,
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            const SizedBox(
+              height: 8,
             ),
-          ),
-          Positioned.fill(
-            child: Padding(
-              padding: const EdgeInsets.all(32),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.end,
+            Container(
+              decoration: const BoxDecoration(
+                color: colorWhite,
+              ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 16,
+              ),
+              child: Text(
+                "Your Order",
+                style: TextStyle(
+                  fontWeight: FontWeight.w800,
+                  fontSize: 25,
+                  color: colorBlack,
+                  fontFamily: Assets.fonts.normsPro,
+                ),
+              ),
+            ),
+            const SizedBox(
+              height: 8,
+            ),
+            Container(
+              decoration: const BoxDecoration(
+                color: colorWhite,
+              ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 25,
+                vertical: 16,
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  OrderItem(
-                    onOrderPressed: () {
-                      print("s");
-                      context.read<MainCubit>().setTab(MainTab.menu);
-                    },
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Icon(
+                        Icons.schedule,
+                        color: colorPrimary3,
+                      ),
+                      const SizedBox(
+                        width: 4,
+                      ),
+                      Text(
+                        "Your food is ready in 15 minutes",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 12,
+                          color: colorBlack,
+                          fontFamily: Assets.fonts.normsPro,
+                        ),
+                      )
+                    ],
+                  ),
+                  Text(
+                    "11.20 AM",
+                    style: TextStyle(
+                      fontWeight: FontWeight.w700,
+                      fontSize: 24,
+                      color: colorBlack,
+                      fontFamily: Assets.fonts.normsPro,
+                    ),
                   ),
                 ],
               ),
             ),
-          ),
-          // Positioned.fill(
-          //   child: SearchAnchor(
-          //     viewBackgroundColor: colorLightGray6,
-          //     searchController: orderCubit.searchController,
-          //     builder: (context, controller) {
-          //       return const SizedBox();
-          //     },
-          //     viewOnSubmitted: (value) {
-          //       context.read<MainCubit>().setTab(MainTab.menu);
-          //     },
-          //     suggestionsBuilder: (context, controller) {
-          //       return [
-          //         ...List.generate(
-          //           5,
-          //           (_) {
-          //             return MultiBlocProvider(
-          //               providers: [
-          //                 BlocProvider(
-          //                   create: (context) => MainCubit(),
-          //                 ),
-          //                 BlocProvider(
-          //                   create: (context) => LocationCubit(),
-          //                 ),
-          //               ],
-          //               child: Builder(builder: (context) {
-          // return Padding(
-          //   padding: const EdgeInsets.symmetric(
-          //     horizontal: 32,
-          //     vertical: 16,
-          //   ),
-          //   child: OrderItem(
-          //     isIconShown: false,
-          //     onOrderPressed: () {
-          //       orderCubit.searchController.closeView(null);
-          //       context.read<MainCubit>().setTab(MainTab.menu);
-          //     },
-          //   ),
-          // );
-          //               }),
-          //             );
-          //           },
-          //         ),
-          //         const SizedBox(
-          //           height: 250,
-          //         ),
-          //       ];
-          //     },
-          //   ),
-          // ),
-        ],
-      ),
-    );
-  }
-}
-
-class _SearchItem extends SearchDelegate<String> {
-  @override
-  List<Widget> buildActions(BuildContext context) {
-    return [
-      IconButton(
-          icon: const Icon(Icons.clear),
-          onPressed: () {
-            query = "";
-          })
-    ];
-  }
-
-  @override
-  Widget buildLeading(BuildContext context) {
-    return IconButton(
-        icon: AnimatedIcon(
-          icon: AnimatedIcons.menu_arrow,
-          progress: transitionAnimation,
+            Image.asset(
+              Assets.images.orderConfirmed,
+              fit: BoxFit.cover,
+            ),
+            Container(
+              decoration: const BoxDecoration(
+                color: colorWhite,
+              ),
+              padding: const EdgeInsets.symmetric(
+                horizontal: 28,
+                vertical: 25,
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.circle,
+                        color: colorPrimary3,
+                        size: 10,
+                      ),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      Text(
+                        "Order confirmed",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: colorBlack,
+                          fontFamily: Assets.fonts.normsPro,
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.circle_outlined,
+                        color: colorLightGray7,
+                        size: 10,
+                      ),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      Text(
+                        "Food is ready at the restaurant",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: colorBlack,
+                          fontFamily: Assets.fonts.normsPro,
+                        ),
+                      )
+                    ],
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Row(
+                    children: [
+                      const Icon(
+                        Icons.circle_outlined,
+                        color: colorLightGray7,
+                        size: 10,
+                      ),
+                      const SizedBox(
+                        width: 8,
+                      ),
+                      Text(
+                        "Already pickup",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 14,
+                          color: colorBlack,
+                          fontFamily: Assets.fonts.normsPro,
+                        ),
+                      )
+                    ],
+                  ),
+                ],
+              ),
+            ),
+            Column(
+              children: [
+                ...List.generate(
+                  3,
+                  (_) {
+                    return Padding(
+                      padding: const EdgeInsets.all(12),
+                      child: Container(
+                        decoration: const BoxDecoration(
+                          color: colorWhite,
+                        ),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 12,
+                          vertical: 13,
+                        ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.end,
+                          children: [
+                            Image.asset(
+                              Assets.images.order1,
+                              width: 125,
+                            ),
+                            const SizedBox(
+                              width: 24,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Text(
+                                  "Crispy Chicken Burger",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w800,
+                                    fontSize: 15,
+                                    color: colorBlack,
+                                    fontFamily: Assets.fonts.normsPro,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                Text(
+                                  "Crispy Chicken Burger",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w500,
+                                    fontSize: 8,
+                                    color: colorBlack,
+                                    fontFamily: Assets.fonts.normsPro,
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 32,
+                                ),
+                                Text(
+                                  "\$16.5",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.w700,
+                                    fontSize: 20,
+                                    color: colorPrimary3,
+                                    fontFamily: Assets.fonts.normsPro,
+                                  ),
+                                ),
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                )
+              ],
+            )
+          ],
         ),
-        onPressed: () {
-          close(context, "");
-        });
-  }
-
-  @override
-  Widget buildResults(BuildContext context) {
-    return const Text("Result");
-  }
-
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    return BlocProvider(
-      create: (context) => MainCubit(),
-      child: ListView.builder(
-        itemBuilder: (context, index) => Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 32,
-            vertical: 16,
-          ),
-          child: OrderItem(
-            isIconShown: false,
-            onOrderPressed: () {
-              context.read<MainCubit>().setTab(MainTab.menu);
-            },
-          ),
-        ),
-        itemCount: 5,
       ),
     );
   }
