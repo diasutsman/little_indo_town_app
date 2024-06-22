@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:little_indo_town_app/features/main/menu/bintang_menu_page.dart';
+import 'package:little_indo_town_app/features/main/menu/bintang_menu/bintang_menu_page.dart';
 import 'package:little_indo_town_app/features/main/menu/main_menu_page.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_routes.dart';
 
