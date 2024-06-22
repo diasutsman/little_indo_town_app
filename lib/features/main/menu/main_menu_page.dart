@@ -4,7 +4,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:little_indo_town_app/configs/assets.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
 import 'package:little_indo_town_app/features/main/home/widgets/home_off20_widget.dart';
-import 'package:little_indo_town_app/features/main/menu/menu_page_cubit.dart';
+import 'package:little_indo_town_app/features/main/menu/cubit/menu_cubit.dart';
+
 import 'package:little_indo_town_app/features/main/menu/menu_routes.dart';
 
 class MainMenuPage extends StatelessWidget {
@@ -12,7 +13,7 @@ class MainMenuPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final MenuPageCubit menuPageCubit = context.read();
+    final MenuCubit menuPageCubit = context.read();
     return SingleChildScrollView(
       padding: const EdgeInsets.symmetric(
         horizontal: 20,
@@ -92,9 +93,7 @@ class MainMenuPage extends StatelessWidget {
             children: [
               InkWell(
                 onTap: () {
-                  menuPageCubit.navigatorKey.currentState?.pushNamed(
-                    MenuRoutes.bintangBroMenuRoute,
-                  );
+                  menuPageCubit.navigateToBintangBro();
                 },
                 child: Image.asset(
                   Assets.images.bintangBro,

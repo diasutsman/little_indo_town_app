@@ -5,9 +5,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:little_indo_town_app/configs/assets.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
 import 'package:little_indo_town_app/features/main/home/widgets/home_off20_widget.dart';
+import 'package:little_indo_town_app/features/main/menu/cubit/menu_cubit.dart';
 import 'package:little_indo_town_app/features/main/menu/main_menu_page.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_drawer.dart';
-import 'package:little_indo_town_app/features/main/menu/menu_page_cubit.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_routes.dart';
 import 'package:little_indo_town_app/features/main/menu/your_point_page.dart';
 
@@ -16,8 +16,7 @@ class MenuPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final MenuPageCubit menuPageCubit = context.read();
-
+    final MenuCubit menuPageCubit = context.read();
     return PopScope(
       canPop: false,
       onPopInvoked: (didPop) async {
@@ -25,6 +24,8 @@ class MenuPage extends StatelessWidget {
         if (didPop) {
           return;
         }
+
+        menuPageCubit.backToMenuMain();
 
         final menuPageContext = menuPageCubit.navigatorKey.currentContext;
         print("menuPageContext?.mounted: ${menuPageContext?.mounted}");
@@ -67,6 +68,29 @@ class MenuPage extends StatelessWidget {
                   Scaffold.of(context).openDrawer();
                 },
               );
+            },
+          ),
+          title: BlocBuilder<MenuCubit, MenuState>(
+            builder: (context, state) {
+              if (state is MenuBintangBro) {
+                return Image.asset(
+                  Assets.images.bintangBro,
+                  height: 25,
+                );
+              }
+              if (state is MenuUrbanDurian) {
+                return Image.asset(
+                  Assets.images.urbanDurian,
+                  height: 25,
+                );
+              }
+              if (state is MenuTeguk) {
+                return Image.asset(
+                  Assets.images.teguk,
+                  height: 25,
+                );
+              }
+              return const SizedBox();
             },
           ),
           actions: [

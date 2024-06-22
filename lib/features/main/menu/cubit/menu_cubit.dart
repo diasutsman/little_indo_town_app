@@ -1,23 +1,41 @@
+import 'package:bloc/bloc.dart';
+import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:little_indo_town_app/features/main/menu/bintang_menu_page.dart';
 import 'package:little_indo_town_app/features/main/menu/main_menu_page.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_routes.dart';
 
-class MenuPageCubit extends Cubit<bool> {
-  MenuPageCubit() : super(true);
+part 'menu_state.dart';
+
+class MenuCubit extends Cubit<MenuState> {
+  MenuCubit() : super(MenuMain());
 
   final navigatorKey = GlobalKey<NavigatorState>();
 
-  void enablePop() {
-    emit(true);
+  void navigateToBintangBro() {
+    emit(MenuBintangBro());
+    navigatorKey.currentState?.pushNamed(
+      MenuRoutes.bintangBroMenuRoute,
+    );
   }
 
-  void disablePop() {
-    emit(false);
+  void navigateToUrbanDurian() {
+    emit(MenuUrbanDurian());
+    navigatorKey.currentState?.pushNamed(
+      MenuRoutes.urbanDurianMenuRoute,
+    );
   }
 
-  bool get canPop => state;
+  void navigateToTeguk() {
+    emit(MenuTeguk());
+    navigatorKey.currentState?.pushNamed(
+      MenuRoutes.tegukMenuRoute,
+    );
+  }
+
+  void backToMenuMain() {
+    emit(MenuMain());
+  }
 
   Route onGenerateRoute(RouteSettings settings) {
     Widget? page;
