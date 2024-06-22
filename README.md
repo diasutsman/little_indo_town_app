@@ -1,16 +1,23 @@
-# little_indo_town_app
+# Little Indo Town
 
-A new Flutter project.
+An app to market a food and drinks restaurant named "Little Indo Town"
 
-## Getting Started
+## How to Start the project
 
-This project is a starting point for a Flutter application.
+1. Get all dependencies
 
-A few resources to get you started if this is your first Flutter project:
+```bash
+flutter pub get
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. (Optional) run dart slang command to make sure translation from `assets/i18n/strings.i18n.json` is loaded into `t` object
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+dart run slang
+```
+
+3. Run the project. Make sure you connected to a mobile device either using **USB** or **ADB**
+
+```bash
+flutter run
+```
