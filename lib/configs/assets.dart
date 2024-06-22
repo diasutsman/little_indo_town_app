@@ -41,6 +41,7 @@ class AssetsImages {
   final String lunch = 'assets/images/lunch.png';
   final String crispyChicken = 'assets/images/crispy-chicken.png';
   final String restaurantMap = 'assets/images/restaurant-map.png';
+  final String profilePic = 'assets/images/profile-pic.png';
 }
 
 class AssetsFonts {

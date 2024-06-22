@@ -43,6 +43,7 @@ class MyApp extends StatelessWidget {
           primaryColor: colorPrimary,
           useMaterial3: true,
           fontFamily: Assets.fonts.normsPro,
+          scaffoldBackgroundColor: colorWhite,
         ),
         onGenerateRoute: Routes.onGenerateRoute,
         routes: Routes.routes,

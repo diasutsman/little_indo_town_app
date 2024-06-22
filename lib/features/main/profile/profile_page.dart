@@ -52,7 +52,9 @@ class ProfilePage extends StatelessWidget {
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 22,
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, Routes.personalDataPage);
+              },
               leading: const Icon(
                 Icons.person,
                 size: 26,
@@ -83,7 +85,9 @@ class ProfilePage extends StatelessWidget {
               contentPadding: const EdgeInsets.symmetric(
                 horizontal: 22,
               ),
-              onTap: () {},
+              onTap: () {
+                Navigator.pushNamed(context, Routes.passwordSecurityPage);
+              },
               leading: const Icon(
                 Icons.lock,
                 size: 26,
