@@ -10,6 +10,7 @@ import 'package:little_indo_town_app/features/main/location/location_cubit.dart'
 import 'package:little_indo_town_app/features/main/location/location_page.dart';
 import 'package:little_indo_town_app/features/main/menu/cubit/menu_cubit.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_page.dart';
+import 'package:little_indo_town_app/features/main/order/order_cubit.dart';
 import 'package:little_indo_town_app/features/main/order/order_page.dart';
 import 'package:little_indo_town_app/features/main/profile/profile_page.dart';
 import 'package:little_indo_town_app/gen/strings.g.dart';
@@ -29,7 +30,17 @@ class MainPage extends StatelessWidget {
             create: (context) => MenuCubit(),
             child: const MenuPage(),
           ),
-          const OrderPage(),
+          MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => OrderCubit(),
+              ),
+              BlocProvider(
+                create: (context) => LocationCubit(),
+              ),
+            ],
+            child: const OrderPage(),
+          ),
           BlocProvider(
             create: (context) => LocationCubit(),
             child: const LocationPage(),

@@ -6,5 +6,8 @@ part 'main_state.dart';
 class MainCubit extends Cubit<MainState> {
   MainCubit() : super(const MainState());
 
-  void setTab(MainTab tab) => emit(MainState(tab: tab));
+  void setTab(MainTab tab) {
+    print("tab: $tab");
+    emit(MainState(tab: tab));
+  }
 }
