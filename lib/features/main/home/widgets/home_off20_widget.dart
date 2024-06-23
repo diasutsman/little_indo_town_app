@@ -38,8 +38,8 @@ class HomeOff20Widget extends StatelessWidget {
                     decoration: const BoxDecoration(
                       gradient: LinearGradient(
                         colors: [
-                          Color(0xFFEE2737),
-                          Colors.transparent,
+                          colorPrimary4,
+                          colorTransparent,
                         ],
                         stops: [0, 0.5],
                         begin: Alignment.centerLeft,
@@ -103,7 +103,6 @@ class HomeOff20Widget extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {},
                           style: ElevatedButton.styleFrom(
-                            
                             padding: const EdgeInsets.symmetric(
                               horizontal: 24,
                             ),

@@ -44,6 +44,9 @@ class AssetsImages {
   final String profilePic = 'assets/images/profile-pic.png';
   final String orderConfirmed = 'assets/images/order-confirmed.png';
   final String order1 = 'assets/images/order-1.png';
+  final String bintangBroMenuItem = 'assets/images/bintang-bro-menu-item.png';
+  final String bintangBroMenuDetail = 'assets/images/bintang-bro-menu-detail.png';
+  final String choiceRasa = 'assets/images/choice-rasa.png';
 }
 
 class AssetsFonts {
