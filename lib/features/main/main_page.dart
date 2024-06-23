@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:little_indo_town_app/components/cubit/app_logged_in_cubit.dart';
 import 'package:little_indo_town_app/configs/assets.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
+import 'package:little_indo_town_app/configs/routes.dart';
 import 'package:little_indo_town_app/features/main/cubit/main_cubit.dart';
 import 'package:little_indo_town_app/features/main/home/home_page.dart';
 import 'package:little_indo_town_app/features/main/location/location_cubit.dart';
@@ -110,7 +112,14 @@ class _HomeTabButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () => context.read<MainCubit>().setTab(value),
+      onPressed: () {
+        if (value == MainTab.profile &&
+            !context.read<AppLoggedInCubit>().isLoggedIn) {
+          Navigator.pushNamed(context, Routes.auth);
+          return;
+        }
+        context.read<MainCubit>().setTab(value);
+      },
       padding: EdgeInsets.zero,
       constraints: const BoxConstraints(),
       iconSize: 32,

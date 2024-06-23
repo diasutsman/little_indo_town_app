@@ -44,17 +44,20 @@ class _BintangMenuPageState extends State<BintangMenuPage>
   Widget build(BuildContext context) {
     return Column(
       children: [
-        TabBar(
-          dividerColor: null,
-          onTap: (index) {},
-          tabAlignment: TabAlignment.start,
-          padding: EdgeInsets.zero,
-          tabs: myTabs,
-          controller: _tabController,
-          unselectedLabelColor: colorBlack,
-          labelColor: colorPrimary,
-          indicatorColor: colorPrimary,
-          isScrollable: true,
+        Material(
+          color: colorWhite,
+          child: TabBar(
+            dividerColor: null,
+            onTap: (index) {},
+            tabAlignment: TabAlignment.start,
+            padding: EdgeInsets.zero,
+            tabs: myTabs,
+            controller: _tabController,
+            unselectedLabelColor: colorBlack,
+            labelColor: colorPrimary,
+            indicatorColor: colorPrimary,
+            isScrollable: true,
+          ),
         ),
         Expanded(
           child: TabBarView(

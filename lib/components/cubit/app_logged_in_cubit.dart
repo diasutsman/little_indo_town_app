@@ -3,11 +3,13 @@ import 'package:get_storage/get_storage.dart';
 
 class AppLoggedInCubit extends Cubit<bool> {
   AppLoggedInCubit() : super(false) {
-    isLoggedIn();
+    _isLoggedIn();
   }
   static const _isLoggedInKey = "_isLoggedInKey";
   final storage = GetStorage();
-  void isLoggedIn() {
+
+  bool get isLoggedIn => state;
+  void _isLoggedIn() {
     final isLoggedIn = storage.read<bool>(_isLoggedInKey);
 
     emit(isLoggedIn ?? false);
