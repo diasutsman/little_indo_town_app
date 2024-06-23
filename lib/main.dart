@@ -44,6 +44,9 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
           fontFamily: Assets.fonts.normsPro,
           scaffoldBackgroundColor: colorWhite,
+          appBarTheme: const AppBarTheme(
+            backgroundColor: colorWhite,
+          ),
         ),
         scrollBehavior: const _ScrollBehaviorModified(),
         onGenerateRoute: Routes.onGenerateRoute,
