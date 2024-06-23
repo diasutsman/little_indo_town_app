@@ -1,17 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:little_indo_town_app/configs/assets.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
 import 'package:little_indo_town_app/features/main/components/menu_drawer.dart';
 import 'package:little_indo_town_app/features/main/components/your_point_page.dart';
-import 'package:little_indo_town_app/features/main/cubit/main_cubit.dart';
-import 'package:little_indo_town_app/features/main/location/location_cubit.dart';
-import 'package:little_indo_town_app/features/main/location/location_item.dart';
-import 'package:little_indo_town_app/features/main/menu/cubit/menu_cubit.dart';
-import 'package:little_indo_town_app/features/main/order/order_cubit.dart';
-import 'package:little_indo_town_app/features/main/order/order_item.dart';
-import 'package:little_indo_town_app/gen/strings.g.dart';
 
 class OrderPage extends StatelessWidget {
   const OrderPage({super.key});

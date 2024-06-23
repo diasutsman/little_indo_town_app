@@ -1,15 +1,13 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:little_indo_town_app/configs/assets.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
-import 'package:little_indo_town_app/features/main/home/widgets/home_off20_widget.dart';
 import 'package:little_indo_town_app/features/main/menu/cubit/menu_cubit.dart';
-import 'package:little_indo_town_app/features/main/menu/main_menu_page.dart';
 import 'package:little_indo_town_app/features/main/components/menu_drawer.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_routes.dart';
 import 'package:little_indo_town_app/features/main/components/your_point_page.dart';
+import 'package:logger/logger.dart';
 
 class MenuPage extends StatelessWidget {
   const MenuPage({super.key});
@@ -20,7 +18,7 @@ class MenuPage extends StatelessWidget {
     return PopScope(
       canPop: false,
       onPopInvoked: (didPop) async {
-        print("MenuPage.didPop: $didPop");
+        Logger().d("MenuPage.didPop: $didPop");
         if (didPop) {
           return;
         }
@@ -28,8 +26,8 @@ class MenuPage extends StatelessWidget {
         menuPageCubit.backToMenuMain();
 
         final menuPageContext = menuPageCubit.navigatorKey.currentContext;
-        print("menuPageContext?.mounted: ${menuPageContext?.mounted}");
-        print(
+        Logger().d("menuPageContext?.mounted: ${menuPageContext?.mounted}");
+        Logger().d(
             "Navigator.canPop(menuPageContext): ${menuPageContext == null ? null : Navigator.canPop(menuPageContext)}");
         if (menuPageContext != null &&
             menuPageContext.mounted &&
@@ -38,8 +36,8 @@ class MenuPage extends StatelessWidget {
           return;
         }
 
-        print("context.mounted: ${context.mounted}");
-        print("Navigator.canPop(context): ${Navigator.canPop(context)}");
+        Logger().d("context.mounted: ${context.mounted}");
+        Logger().d("Navigator.canPop(context): ${Navigator.canPop(context)}");
         if (context.mounted && Navigator.canPop(context)) {
           Navigator.pop(context);
         }
@@ -129,7 +127,6 @@ class MenuPage extends StatelessWidget {
             }),
           ],
         ),
-       
         body: Navigator(
           key: menuPageCubit.navigatorKey,
           initialRoute: MenuRoutes.mainMenuRoute,

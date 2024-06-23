@@ -6,7 +6,6 @@ import 'package:little_indo_town_app/configs/colors.dart';
 import 'package:little_indo_town_app/features/main/home/widgets/home_off20_widget.dart';
 import 'package:little_indo_town_app/features/main/menu/cubit/menu_cubit.dart';
 
-import 'package:little_indo_town_app/features/main/menu/menu_routes.dart';
 
 class MainMenuPage extends StatelessWidget {
   const MainMenuPage({super.key});
@@ -101,14 +100,18 @@ class MainMenuPage extends StatelessWidget {
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  menuPageCubit.navigateToUrbanDurian();
+                },
                 child: Image.asset(
                   Assets.images.urbanDurian,
                   width: 65,
                 ),
               ),
               InkWell(
-                onTap: () {},
+                onTap: () {
+                  menuPageCubit.navigateToTeguk();
+                },
                 child: Image.asset(
                   Assets.images.teguk,
                   width: 86,

@@ -46,6 +46,9 @@ class MenuCubit extends Cubit<MenuState> {
         page = const MainMenuPage();
         break;
       case MenuRoutes.bintangBroMenuRoute:
+      //TODO: This is only for showing purposes, next use dedicated Widgets for each route
+      case MenuRoutes.urbanDurianMenuRoute:
+      case MenuRoutes.tegukMenuRoute:
         page = const BintangMenuPage();
         break;
       case MenuRoutes.bintangBroMenuDetailRoute:

@@ -5,7 +5,6 @@ import 'package:little_indo_town_app/configs/assets.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
 import 'package:little_indo_town_app/configs/routes.dart';
 import 'package:little_indo_town_app/features/auth/components/auth_page_cubit.dart';
-import 'package:little_indo_town_app/features/auth/welcome/auth_welcome_page.dart';
 import 'package:little_indo_town_app/gen/strings.g.dart';
 
 class AuthPage extends StatelessWidget {
