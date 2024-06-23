@@ -5,6 +5,7 @@ import 'package:little_indo_town_app/features/onboarding/components/pages/Onboar
 import 'package:little_indo_town_app/features/onboarding/components/pages/onboarding_page_2.dart';
 import 'package:little_indo_town_app/features/onboarding/components/pages/onboarding_page_3.dart';
 
+
 class OnboardingPageCubit extends Cubit<int> {
   OnboardingPageCubit() : super(0);
 

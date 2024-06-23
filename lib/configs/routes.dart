@@ -40,8 +40,6 @@ class Routes {
         ),
   };
 
-  static get initialRoute => onboarding;
-
   static Widget getWidgetByRoute({
     required BuildContext context,
     required String route,

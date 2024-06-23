@@ -10,7 +10,6 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final onboardingPageCubit = context.read<OnboardingPageCubit>();
-
     return Scaffold(
       backgroundColor: colorPrimary,
       body: Column(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:little_indo_town_app/components/app_logged_in_cubit.dart';
+import 'package:little_indo_town_app/components/cubit/app_logged_in_cubit.dart';
 import 'package:little_indo_town_app/configs/assets.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
 import 'package:little_indo_town_app/features/main/home/widgets/components/home_carousel_cubit.dart';
