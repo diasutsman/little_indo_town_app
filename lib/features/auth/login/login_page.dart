@@ -4,6 +4,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:little_indo_town_app/configs/assets.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
 import 'package:little_indo_town_app/features/auth/components/auth_page_cubit.dart';
+import 'package:little_indo_town_app/features/auth/login/cubit/login_toggle_password_cubit.dart';
 import 'package:little_indo_town_app/gen/strings.g.dart';
 
 class LoginPage extends StatelessWidget {
@@ -79,45 +80,56 @@ class LoginPage extends StatelessWidget {
               ),
               SizedBox(
                 height: 50,
-                child: TextFormField(
-                  keyboardType: TextInputType.visiblePassword,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: t.auth.login.password,
-                    border: const OutlineInputBorder(
-                      borderRadius: BorderRadius.zero,
-                      borderSide: BorderSide(
-                        color: colorLightGray2,
-                        width: 1,
+                child: BlocBuilder<LoginTogglePasswordCubit,
+                    LoginTogglePasswordState>(
+                  builder: (context, state) {
+                    return TextFormField(
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: state.isPasswordHidden,
+                      decoration: InputDecoration(
+                        hintText: t.auth.login.password,
+                        border: const OutlineInputBorder(
+                          borderRadius: BorderRadius.zero,
+                          borderSide: BorderSide(
+                            color: colorLightGray2,
+                            width: 1,
+                          ),
+                        ),
+                        focusedBorder: const OutlineInputBorder(
+                          borderRadius: BorderRadius.zero,
+                          borderSide: BorderSide(
+                            color: colorPrimary,
+                            width: 1,
+                          ),
+                        ),
+                        hintStyle: GoogleFonts.montserrat(
+                          fontWeight: FontWeight.w400,
+                          color: colorLightGray3,
+                        ),
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            final LoginTogglePasswordCubit
+                                loginTogglePasswordCubit = context.read();
+                            loginTogglePasswordCubit.togglePassword();
+                          },
+                          icon: Icon(
+                            state.isPasswordHidden
+                                ? Icons.visibility_outlined
+                                : Icons.visibility_off_outlined,
+                            color: colorLightGray3,
+                          ),
+                        ),
+                        suffixIconColor: WidgetStateColor.resolveWith(
+                          (states) {
+                            if (states.contains(WidgetState.focused)) {
+                              return colorPrimary;
+                            }
+                            return colorLightGray3;
+                          },
+                        ),
                       ),
-                    ),
-                    focusedBorder: const OutlineInputBorder(
-                      borderRadius: BorderRadius.zero,
-                      borderSide: BorderSide(
-                        color: colorPrimary,
-                        width: 1,
-                      ),
-                    ),
-                    hintStyle: GoogleFonts.montserrat(
-                      fontWeight: FontWeight.w400,
-                      color: colorLightGray3,
-                    ),
-                    suffixIcon: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.visibility_outlined,
-                        color: colorLightGray3,
-                      ),
-                    ),
-                    suffixIconColor: WidgetStateColor.resolveWith(
-                      (states) {
-                        if (states.contains(WidgetState.focused)) {
-                          return colorPrimary;
-                        }
-                        return colorLightGray3;
-                      },
-                    ),
-                  ),
+                    );
+                  },
                 ),
               ),
               const SizedBox(

@@ -1,7 +1,10 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:little_indo_town_app/features/auth/login/cubit/login_toggle_password_cubit.dart';
 import 'package:little_indo_town_app/features/auth/login/login_page.dart';
-import 'package:little_indo_town_app/features/auth/register/register_check_email_page.dart';
+import 'package:little_indo_town_app/features/auth/register/cubit/register_toggle_password_cubit.dart';
+import 'package:little_indo_town_app/features/auth/register/cubit/register_use_credentials_cubit.dart';
+import 'package:little_indo_town_app/features/auth/register/register_check_verification_page.dart';
 import 'package:little_indo_town_app/features/auth/register/register_create_account_page.dart';
 import 'package:little_indo_town_app/features/auth/register/register_personal_data_page.dart';
 import 'package:little_indo_town_app/features/auth/register/register_welcome_page.dart';
@@ -19,10 +22,20 @@ class AuthPageCubit extends Cubit<int> {
 
   static final List<Widget> _pages = [
     const AuthWelcomePage(),
-    const LoginPage(),
+    BlocProvider(
+      create: (context) => LoginTogglePasswordCubit(),
+      child: const LoginPage(),
+    ),
     const RegisterPersonalDataPage(),
-    const RegisterCreateAccountPage(),
-    const RegisterCheckEmailPage(),
+    MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => RegisterTogglePasswordCubit(),
+        ),
+      ],
+      child: const RegisterCreateAccountPage(),
+    ),
+    const RegisterCheckVerificationPage(),
     const RegisterWelcomePage(),
   ];
 
@@ -64,6 +77,7 @@ class AuthPageCubit extends Cubit<int> {
   }
 
   void gotoPage(int index) {
+    FocusManager.instance.primaryFocus?.unfocus();
     if (0 > index || index >= _pages.length) {
       throw Exception("Invalid page index");
     }

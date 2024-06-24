@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:little_indo_town_app/configs/assets.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
+import 'package:little_indo_town_app/features/auth/register/cubit/register_toggle_password_cubit.dart';
+import 'package:little_indo_town_app/features/auth/register/cubit/register_use_credentials_cubit.dart';
 import 'package:little_indo_town_app/gen/strings.g.dart';
 
 class RegisterCreateAccountPage extends StatelessWidget {
@@ -9,6 +12,8 @@ class RegisterCreateAccountPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final RegisterUseCredentialsCubit registerUseCredentialsCubit =
+        context.read();
     return SingleChildScrollView(
       child: Form(
         child: Padding(
@@ -48,78 +53,119 @@ class RegisterCreateAccountPage extends StatelessWidget {
               const SizedBox(
                 height: 38,
               ),
-              SizedBox(
-                height: 50,
-                child: TextFormField(
-                  keyboardType: TextInputType.name,
-                  decoration: InputDecoration(
-                    hintText: t.auth.register.email,
-                    border: const OutlineInputBorder(
-                      borderRadius: BorderRadius.zero,
-                      borderSide: BorderSide(
-                        color: colorLightGray2,
-                        width: 1,
+              BlocBuilder<RegisterUseCredentialsCubit,
+                  RegisterUseCredentialsState>(
+                builder: (context, state) {
+                  return SizedBox(
+                    height: 50,
+                    child: TextFormField(
+                      keyboardType: state.useEmail
+                          ? TextInputType.emailAddress
+                          : TextInputType.phone,
+                      decoration: InputDecoration(
+                        hintText: state.useEmail
+                            ? t.auth.register.email
+                            : t.auth.register.phone,
+                        border: const OutlineInputBorder(
+                          borderRadius: BorderRadius.zero,
+                          borderSide: BorderSide(
+                            color: colorLightGray2,
+                            width: 1,
+                          ),
+                        ),
+                        focusedBorder: const OutlineInputBorder(
+                          borderRadius: BorderRadius.zero,
+                          borderSide: BorderSide(
+                            color: colorPrimary,
+                            width: 1,
+                          ),
+                        ),
+                        hintStyle: GoogleFonts.montserrat(
+                          fontWeight: FontWeight.w400,
+                          color: colorLightGray3,
+                        ),
+                        suffixIcon: TextButton(
+                          onPressed: () {
+                            FocusManager.instance.primaryFocus?.unfocus();
+                            if (state.usePhoneNumber) {
+                              registerUseCredentialsCubit.useEmail();
+                            }
+                            if (state.useEmail) {
+                              registerUseCredentialsCubit.usePhoneNumber();
+                            }
+                          },
+                          // tooltip: state.usePhoneNumber
+                          //     ? "Use Email"
+                          //     : "Use Phone Number",
+                          child: Text(
+                            state.useEmail ? "Use Phone" : "Use Email",
+                          ),
+                          // icon: state.useEmail
+                          //     ? const Icon(Icons.phone_android_outlined)
+                          //     : const Icon(Icons.email_outlined),
+                        ),
                       ),
                     ),
-                    focusedBorder: const OutlineInputBorder(
-                      borderRadius: BorderRadius.zero,
-                      borderSide: BorderSide(
-                        color: colorPrimary,
-                        width: 1,
-                      ),
-                    ),
-                    hintStyle: GoogleFonts.montserrat(
-                      fontWeight: FontWeight.w400,
-                      color: colorLightGray3,
-                    ),
-                  ),
-                ),
+                  );
+                },
               ),
               const SizedBox(
                 height: 20,
               ),
-              SizedBox(
-                height: 50,
-                child: TextFormField(
-                  keyboardType: TextInputType.name,
-                  obscureText: true,
-                  decoration: InputDecoration(
-                    hintText: t.auth.register.enter_password,
-                    border: const OutlineInputBorder(
-                      borderRadius: BorderRadius.zero,
-                      borderSide: BorderSide(
-                        color: colorLightGray2,
-                        width: 1,
+              BlocBuilder<RegisterTogglePasswordCubit,
+                  RegisterTogglePasswordState>(
+                builder: (context, state) {
+                  return SizedBox(
+                    height: 50,
+                    child: TextFormField(
+                      keyboardType: TextInputType.visiblePassword,
+                      obscureText: state.isPasswordHidden,
+                      decoration: InputDecoration(
+                        hintText: t.auth.register.enter_password,
+                        border: const OutlineInputBorder(
+                          borderRadius: BorderRadius.zero,
+                          borderSide: BorderSide(
+                            color: colorLightGray2,
+                            width: 1,
+                          ),
+                        ),
+                        suffixIcon: IconButton(
+                          onPressed: () {
+                            final RegisterTogglePasswordCubit
+                                registerTogglePasswordCubit = context.read();
+
+                            registerTogglePasswordCubit.togglePassword();
+                          },
+                          icon: Icon(
+                            state.isPasswordHidden
+                                ? Icons.visibility_outlined
+                                : Icons.visibility_off_outlined,
+                            color: colorLightGray3,
+                          ),
+                        ),
+                        focusedBorder: const OutlineInputBorder(
+                          borderRadius: BorderRadius.zero,
+                          borderSide: BorderSide(
+                            color: colorPrimary,
+                            width: 1,
+                          ),
+                        ),
+                        hintStyle: GoogleFonts.montserrat(
+                          fontWeight: FontWeight.w400,
+                          color: colorLightGray3,
+                        ),
+                        suffixIconColor: WidgetStateColor.resolveWith(
+                          (states) {
+                            if (states.contains(WidgetState.focused)) {
+                              return colorPrimary;
+                            }
+                            return colorLightGray3;
+                          },
+                        ),
                       ),
                     ),
-                    suffixIcon: IconButton(
-                      onPressed: () {},
-                      icon: const Icon(
-                        Icons.visibility_outlined,
-                        color: colorLightGray3,
-                      ),
-                    ),
-                    focusedBorder: const OutlineInputBorder(
-                      borderRadius: BorderRadius.zero,
-                      borderSide: BorderSide(
-                        color: colorPrimary,
-                        width: 1,
-                      ),
-                    ),
-                    hintStyle: GoogleFonts.montserrat(
-                      fontWeight: FontWeight.w400,
-                      color: colorLightGray3,
-                    ),
-                    suffixIconColor: WidgetStateColor.resolveWith(
-                      (states) {
-                        if (states.contains(WidgetState.focused)) {
-                          return colorPrimary;
-                        }
-                        return colorLightGray3;
-                      },
-                    ),
-                  ),
-                ),
+                  );
+                },
               ),
               const SizedBox(
                 height: 30,

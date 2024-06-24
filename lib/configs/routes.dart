@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:little_indo_town_app/features/auth/auth_page.dart';
 import 'package:little_indo_town_app/features/auth/components/auth_page_cubit.dart';
+import 'package:little_indo_town_app/features/auth/register/cubit/register_use_credentials_cubit.dart';
 import 'package:little_indo_town_app/features/main/cubit/main_cubit.dart';
 import 'package:little_indo_town_app/features/main/home/home_page.dart';
 import 'package:little_indo_town_app/features/main/main_page.dart';
@@ -28,8 +29,15 @@ class Routes {
           create: (_) => MainCubit(),
           child: const MainPage(),
         ),
-    auth: (context) => BlocProvider(
-          create: (_) => AuthPageCubit(),
+    auth: (context) => MultiBlocProvider(
+          providers: [
+            BlocProvider(
+              create: (_) => AuthPageCubit(),
+            ),
+            BlocProvider(
+              create: (_) => RegisterUseCredentialsCubit(),
+            )
+          ],
           child: const AuthPage(),
         ),
     home: (context) => const HomePage(),

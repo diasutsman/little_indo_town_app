@@ -20,7 +20,6 @@ class AppRedirectToRouteCubit extends Cubit<AppRedirectToRouteState> {
       emit(AppSkipOnboarding());
       return;
     }
-    storage.write(_isOnboardingShownKey, true);
     emit(AppShowOnboarding());
   }
 }
