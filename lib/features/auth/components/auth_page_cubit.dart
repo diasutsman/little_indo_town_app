@@ -3,7 +3,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:little_indo_town_app/features/auth/login/cubit/login_toggle_password_cubit.dart';
 import 'package:little_indo_town_app/features/auth/login/login_page.dart';
 import 'package:little_indo_town_app/features/auth/register/cubit/register_toggle_password_cubit.dart';
-import 'package:little_indo_town_app/features/auth/register/cubit/register_use_credentials_cubit.dart';
 import 'package:little_indo_town_app/features/auth/register/register_check_verification_page.dart';
 import 'package:little_indo_town_app/features/auth/register/register_create_account_page.dart';
 import 'package:little_indo_town_app/features/auth/register/register_personal_data_page.dart';

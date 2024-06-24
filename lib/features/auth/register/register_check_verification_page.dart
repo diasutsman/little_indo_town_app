@@ -12,8 +12,6 @@ class RegisterCheckVerificationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final RegisterUseCredentialsCubit registerUseCredentialsCubit =
-        context.read();
     return BlocBuilder<RegisterUseCredentialsCubit,
         RegisterUseCredentialsState>(
       builder: (context, state) {
