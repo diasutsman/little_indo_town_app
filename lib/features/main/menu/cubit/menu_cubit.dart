@@ -5,12 +5,13 @@ import 'package:little_indo_town_app/features/main/menu/bintang_menu/bintang_men
 import 'package:little_indo_town_app/features/main/menu/bintang_menu/bintang_menu_detail_page.dart';
 import 'package:little_indo_town_app/features/main/menu/bintang_menu/bintang_menu_page.dart';
 import 'package:little_indo_town_app/features/main/menu/main_menu_page.dart';
+import 'package:little_indo_town_app/features/main/menu/menu_location_page.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_routes.dart';
 
 part 'menu_state.dart';
 
 class MenuCubit extends Cubit<MenuState> {
-  MenuCubit() : super(MenuMain());
+  MenuCubit() : super(LocationMenu());
 
   final navigatorKey = GlobalKey<NavigatorState>();
 
@@ -18,6 +19,13 @@ class MenuCubit extends Cubit<MenuState> {
     emit(MenuBintangBro());
     navigatorKey.currentState?.pushNamed(
       MenuRoutes.bintangBroMenuRoute,
+    );
+  }
+
+  void navigateToMainMenu() {
+    emit(MenuMain());
+    navigatorKey.currentState?.pushNamed(
+      MenuRoutes.mainMenuRoute,
     );
   }
 
@@ -35,13 +43,16 @@ class MenuCubit extends Cubit<MenuState> {
     );
   }
 
-  void backToMenuMain() {
-    emit(MenuMain());
+  void resetMenuRoute() {
+    emit(LocationMenu());
   }
 
   Route onGenerateRoute(RouteSettings settings) {
     Widget? page;
     switch (settings.name) {
+      case MenuRoutes.locationMenuRoute:
+        page = const MenuLocationPage();
+        break;
       case MenuRoutes.mainMenuRoute:
         page = const MainMenuPage();
         break;

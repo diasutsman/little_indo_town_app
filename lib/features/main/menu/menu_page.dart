@@ -23,7 +23,7 @@ class MenuPage extends StatelessWidget {
           return;
         }
 
-        menuPageCubit.backToMenuMain();
+        menuPageCubit.resetMenuRoute();
 
         final menuPageContext = menuPageCubit.navigatorKey.currentContext;
         Logger().d("menuPageContext?.mounted: ${menuPageContext?.mounted}");
@@ -129,7 +129,7 @@ class MenuPage extends StatelessWidget {
         ),
         body: Navigator(
           key: menuPageCubit.navigatorKey,
-          initialRoute: MenuRoutes.mainMenuRoute,
+          initialRoute: MenuRoutes.locationMenuRoute,
           onGenerateRoute: menuPageCubit.onGenerateRoute,
         ),
       ),

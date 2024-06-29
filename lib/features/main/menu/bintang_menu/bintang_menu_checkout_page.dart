@@ -316,11 +316,11 @@ class BintangMenuCheckoutPage extends StatelessWidget {
                           ),
                           onPressed: () {
                             context.read<MainCubit>().setTab(MainTab.order);
-                            context.read<MenuCubit>().backToMenuMain();
+                            context.read<MenuCubit>().resetMenuRoute();
                             Navigator.pushNamedAndRemoveUntil(
                               context,
-                              MenuRoutes.mainMenuRoute,
-                              (contex) => false,
+                              MenuRoutes.initialRoute,
+                              (context) => false,
                             );
                           },
                           child: Text(
