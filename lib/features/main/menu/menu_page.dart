@@ -122,39 +122,70 @@ class MenuPage extends StatelessWidget {
             },
           ),
           actions: [
-            Builder(builder: (context) {
-              return Column(
-                children: [
-                  Expanded(
-                    child: InkWell(
-                      onTap: () {
-                        Scaffold.of(context).openEndDrawer();
-                      },
-                      child: Row(
-                        children: [
-                          const Icon(
-                            Icons.shopping_bag,
-                            color: colorPrimary2,
+            BlocBuilder<MenuCubit, MenuState>(
+              builder: (context, state) {
+                if (state is PointHistoryMenuState) {
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 27),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Your Point",
+                          style: TextStyle(
+                            fontFamily: Assets.fonts.normsPro,
+                            fontWeight: FontWeight.w500,
+                            fontSize: 10,
+                            color: colorLightGray11,
                           ),
-                          Text(
-                            "0 point",
-                            style: GoogleFonts.montserrat(
-                              fontWeight: FontWeight.w800,
-                              fontSize: 15,
-                              color: colorBlack,
-                            ),
-                          ),
-                          const Icon(
-                            Icons.chevron_right_rounded,
+                        ),
+                        Text(
+                          "280 point",
+                          style: TextStyle(
+                            fontFamily: Assets.fonts.normsPro,
+                            fontWeight: FontWeight.w800,
+                            fontSize: 16,
                             color: colorBlack,
                           ),
-                        ],
+                        ),
+                      ],
+                    ),
+                  );
+                }
+                return Column(
+                  children: [
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          Scaffold.of(context).openEndDrawer();
+                        },
+                        child: Row(
+                          children: [
+                            const Icon(
+                              Icons.shopping_bag,
+                              color: colorPrimary2,
+                            ),
+                            Text(
+                              "0 point",
+                              style: GoogleFonts.montserrat(
+                                fontWeight: FontWeight.w800,
+                                fontSize: 15,
+                                color: colorBlack,
+                              ),
+                            ),
+                            const Icon(
+                              Icons.chevron_right_rounded,
+                              color: colorBlack,
+                            ),
+                          ],
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              );
-            }),
+                  ],
+                );
+              },
+            ),
           ],
         ),
         body: Navigator(

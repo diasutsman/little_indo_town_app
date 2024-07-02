@@ -47,6 +47,9 @@ class MainPage extends StatelessWidget {
               BlocProvider(
                 create: (context) => LocationCubit(),
               ),
+              BlocProvider(
+                create: (context) => MenuCubit(),
+              ),
             ],
             child: const OrderPage(),
           ),

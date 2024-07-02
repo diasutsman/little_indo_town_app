@@ -25,6 +25,7 @@ const colorLightGray7 = Color(0xFFBEBEBE);
 const colorLightGray8 = Color(0xFF939292);
 const colorLightGray9 = Color(0xFFD2D2D2);
 const colorLightGray10 = Color(0xFFBABABA);
+const colorLightGray11 = Color(0xFFC1C1C1);
 const colorDarkGray = Color(0xFF474747);
 const colorDarkGray2 = Color(0xFF676767);
 const colorDarkGray3 = Color(0xFF343434);
