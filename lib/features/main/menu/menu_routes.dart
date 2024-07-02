@@ -6,6 +6,7 @@ class MenuRoutes {
   static const bintangBroMenuCheckoutRoute = "/menu/bintang-bro/checkout";
   static const urbanDurianMenuRoute = "/menu/urban-durian";
   static const tegukMenuRoute = "/menu/teguk";
+  static const favoriteMenuRoute = "/menu/favorite";
 
   static const String initialRoute = locationMenuRoute;
 }

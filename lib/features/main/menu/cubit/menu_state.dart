@@ -8,6 +8,7 @@ sealed class MenuState extends Equatable {
 }
 
 final class LocationMenu extends MenuState {}
+final class MenuFavorite extends MenuState {}
 final class MenuMain extends MenuState {}
 final class MenuBintangBro extends MenuState {}
 final class MenuUrbanDurian extends MenuState {}

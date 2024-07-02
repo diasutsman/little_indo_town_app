@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:little_indo_town_app/features/main/menu/bintang_menu/bintang_menu_checkout_page.dart';
 import 'package:little_indo_town_app/features/main/menu/bintang_menu/bintang_menu_detail_page.dart';
 import 'package:little_indo_town_app/features/main/menu/bintang_menu/bintang_menu_page.dart';
+import 'package:little_indo_town_app/features/main/menu/favorite/favorite_menu_page.dart';
 import 'package:little_indo_town_app/features/main/menu/main_menu_page.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_location_page.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_routes.dart';
@@ -43,6 +44,13 @@ class MenuCubit extends Cubit<MenuState> {
     );
   }
 
+  void navigateToFavoriteMenu() {
+    emit(MenuFavorite());
+    navigatorKey.currentState?.pushNamed(
+      MenuRoutes.favoriteMenuRoute,
+    );
+  }
+
   void resetMenuRoute() {
     emit(LocationMenu());
   }
@@ -52,6 +60,9 @@ class MenuCubit extends Cubit<MenuState> {
     switch (settings.name) {
       case MenuRoutes.locationMenuRoute:
         page = const MenuLocationPage();
+        break;
+      case MenuRoutes.favoriteMenuRoute:
+        page = const FavoriteMenuPage();
         break;
       case MenuRoutes.mainMenuRoute:
         page = const MainMenuPage();

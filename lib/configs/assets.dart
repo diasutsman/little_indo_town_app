@@ -1,24 +1,13 @@
 class Assets {
-  static AssetsIcons? _icons;
-  static AssetsIcons get icons {
-    if (_icons != null) return _icons as AssetsIcons;
-    return _icons = AssetsIcons();
-  }
+  static const AssetsIcons icons = AssetsIcons();
 
-  static AssetsFonts? _fonts;
-  static AssetsFonts get fonts {
-    if (_fonts != null) return _fonts as AssetsFonts;
-    return _fonts = AssetsFonts();
-  }
+  static const AssetsFonts fonts = AssetsFonts();
 
-  static AssetsImages? _images;
-  static AssetsImages get images {
-    if (_images != null) return _images as AssetsImages;
-    return _images = AssetsImages();
-  }
+  static const AssetsImages images = AssetsImages();
 }
 
 class AssetsIcons {
+  const AssetsIcons();
   final String appIcon = 'assets/icon/icon.png';
   final String appIconWhite = 'assets/icon/icon-white.png';
   final String appIconSmall = 'assets/icon/app-icon-small.png';
@@ -28,6 +17,7 @@ class AssetsIcons {
 }
 
 class AssetsImages {
+  const AssetsImages();
   final String homeCarousel1 = 'assets/images/home-carousel-1.png';
   final String bintangBro = 'assets/images/bintang-bro.png';
   final String teguk = 'assets/images/teguk.png';
@@ -45,11 +35,13 @@ class AssetsImages {
   final String orderConfirmed = 'assets/images/order-confirmed.png';
   final String order1 = 'assets/images/order-1.png';
   final String bintangBroMenuItem = 'assets/images/bintang-bro-menu-item.png';
-  final String bintangBroMenuDetail = 'assets/images/bintang-bro-menu-detail.png';
+  final String bintangBroMenuDetail =
+      'assets/images/bintang-bro-menu-detail.png';
   final String choiceRasa = 'assets/images/choice-rasa.png';
 }
 
 class AssetsFonts {
+  const AssetsFonts();
   final String elikaGorica = "Elika Gorica";
   final String normsPro = "TT Norms Pro";
   final String intro = "Intro";

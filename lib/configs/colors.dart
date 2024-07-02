@@ -4,6 +4,7 @@ const colorPrimary = Color(0xFFDB402F);
 const colorPrimary2 = Color(0xFFDA402E);
 const colorPrimary3 = Color(0xFFEB3725);
 const colorPrimary4 = Color(0xFFEE2737);
+const colorPrimary5 = Color(0xFFEE2D38);
 const colorDarkPrimary = Color(0xFF8F2A2A);
 const colorOnPrimary = Colors.white;
 const colorBlack = Colors.black;

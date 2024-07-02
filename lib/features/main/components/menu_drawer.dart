@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:little_indo_town_app/configs/assets.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
+import 'package:little_indo_town_app/features/main/menu/cubit/menu_cubit.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final MenuCubit menuPageCubit = context.read();
     return Drawer(
       backgroundColor: colorPastel,
       width: double.infinity,
@@ -193,7 +196,7 @@ class MenuDrawer extends StatelessWidget {
             ListTile(
               contentPadding: EdgeInsets.zero,
               title: Text(
-                'Favorite Saya',
+                'Favorite',
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
                   fontSize: 14,
@@ -202,8 +205,8 @@ class MenuDrawer extends StatelessWidget {
                 ),
               ),
               onTap: () {
-                // Update the state of the app.
-                // ...
+                Scaffold.of(context).closeDrawer();
+                menuPageCubit.navigateToFavoriteMenu();
               },
             ),
             ListTile(

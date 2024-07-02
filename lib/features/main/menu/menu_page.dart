@@ -88,6 +88,16 @@ class MenuPage extends StatelessWidget {
                   height: 25,
                 );
               }
+              if (state is MenuFavorite) {
+                return Text(
+                  "Favorite",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20,
+                    fontFamily: Assets.fonts.normsPro,
+                  ),
+                );
+              }
               return const SizedBox();
             },
           ),
