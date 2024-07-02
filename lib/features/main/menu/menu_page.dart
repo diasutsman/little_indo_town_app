@@ -70,27 +70,37 @@ class MenuPage extends StatelessWidget {
           ),
           title: BlocBuilder<MenuCubit, MenuState>(
             builder: (context, state) {
-              if (state is MenuBintangBro) {
+              if (state is MenuBintangBroState) {
                 return Image.asset(
                   Assets.images.bintangBro,
                   height: 25,
                 );
               }
-              if (state is MenuUrbanDurian) {
+              if (state is MenuUrbanDurianState) {
                 return Image.asset(
                   Assets.images.urbanDurian,
                   height: 25,
                 );
               }
-              if (state is MenuTeguk) {
+              if (state is MenuTegukState) {
                 return Image.asset(
                   Assets.images.teguk,
                   height: 25,
                 );
               }
-              if (state is MenuFavorite) {
+              if (state is MenuFavoriteState) {
                 return Text(
                   "Favorite",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20,
+                    fontFamily: Assets.fonts.normsPro,
+                  ),
+                );
+              }
+              if (state is OrderHistoryMenuState) {
+                return Text(
+                  "Order History",
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 20,

@@ -164,38 +164,6 @@ class MenuDrawer extends StatelessWidget {
             ListTile(
               contentPadding: EdgeInsets.zero,
               title: Text(
-                'Lacak Pesanan',
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 14,
-                  color: colorBlack,
-                  fontFamily: Assets.fonts.normsPro,
-                ),
-              ),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              title: Text(
-                'Pesanan Lalu',
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: 14,
-                  color: colorBlack,
-                  fontFamily: Assets.fonts.normsPro,
-                ),
-              ),
-              onTap: () {
-                // Update the state of the app.
-                // ...
-              },
-            ),
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              title: Text(
                 'Favorite',
                 style: TextStyle(
                   fontWeight: FontWeight.w500,
@@ -207,6 +175,38 @@ class MenuDrawer extends StatelessWidget {
               onTap: () {
                 Scaffold.of(context).closeDrawer();
                 menuPageCubit.navigateToFavoriteMenu();
+              },
+            ),
+            ListTile(
+              contentPadding: EdgeInsets.zero,
+              title: Text(
+                'Order History',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14,
+                  color: colorBlack,
+                  fontFamily: Assets.fonts.normsPro,
+                ),
+              ),
+              onTap: () {
+                Scaffold.of(context).closeDrawer();
+                menuPageCubit.navigateToOrderHistoryMenu();
+              },
+            ),
+            ListTile(
+              contentPadding: EdgeInsets.zero,
+              title: Text(
+                'Lacak Pesanan',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  fontSize: 14,
+                  color: colorBlack,
+                  fontFamily: Assets.fonts.normsPro,
+                ),
+              ),
+              onTap: () {
+                // Update the state of the app.
+                // ...
               },
             ),
             ListTile(

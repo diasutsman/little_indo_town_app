@@ -8,6 +8,7 @@ import 'package:little_indo_town_app/features/main/menu/favorite/favorite_menu_p
 import 'package:little_indo_town_app/features/main/menu/main_menu_page.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_location_page.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_routes.dart';
+import 'package:little_indo_town_app/features/main/menu/order_history/order_history_menu_page.dart';
 
 part 'menu_state.dart';
 
@@ -17,37 +18,44 @@ class MenuCubit extends Cubit<MenuState> {
   final navigatorKey = GlobalKey<NavigatorState>();
 
   void navigateToBintangBro() {
-    emit(MenuBintangBro());
+    emit(MenuBintangBroState());
     navigatorKey.currentState?.pushNamed(
       MenuRoutes.bintangBroMenuRoute,
     );
   }
 
   void navigateToMainMenu() {
-    emit(MenuMain());
+    emit(MenuMainState());
     navigatorKey.currentState?.pushNamed(
       MenuRoutes.mainMenuRoute,
     );
   }
 
   void navigateToUrbanDurian() {
-    emit(MenuUrbanDurian());
+    emit(MenuUrbanDurianState());
     navigatorKey.currentState?.pushNamed(
       MenuRoutes.urbanDurianMenuRoute,
     );
   }
 
   void navigateToTeguk() {
-    emit(MenuTeguk());
+    emit(MenuTegukState());
     navigatorKey.currentState?.pushNamed(
       MenuRoutes.tegukMenuRoute,
     );
   }
 
   void navigateToFavoriteMenu() {
-    emit(MenuFavorite());
+    emit(MenuFavoriteState());
     navigatorKey.currentState?.pushNamed(
       MenuRoutes.favoriteMenuRoute,
+    );
+  }
+
+  void navigateToOrderHistoryMenu() {
+    emit(OrderHistoryMenuState());
+    navigatorKey.currentState?.pushNamed(
+      MenuRoutes.orderHistoryMenuRoute,
     );
   }
 
@@ -63,6 +71,9 @@ class MenuCubit extends Cubit<MenuState> {
         break;
       case MenuRoutes.favoriteMenuRoute:
         page = const FavoriteMenuPage();
+        break;
+      case MenuRoutes.orderHistoryMenuRoute:
+        page = const OrderHistoryMenuPage();
         break;
       case MenuRoutes.mainMenuRoute:
         page = const MainMenuPage();
