@@ -9,6 +9,7 @@ import 'package:little_indo_town_app/features/main/menu/main_menu_page.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_location_page.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_routes.dart';
 import 'package:little_indo_town_app/features/main/menu/order_history/order_history_menu_page.dart';
+import 'package:little_indo_town_app/features/main/menu/point_history/point_history_menu_page.dart';
 
 part 'menu_state.dart';
 
@@ -59,6 +60,13 @@ class MenuCubit extends Cubit<MenuState> {
     );
   }
 
+  void navigateToPointHistoryMenu() {
+    emit(PointHistoryMenuState());
+    navigatorKey.currentState?.pushNamed(
+      MenuRoutes.pointHistoryMenuRoute,
+    );
+  }
+
   void resetMenuRoute() {
     emit(LocationMenu());
   }
@@ -74,6 +82,9 @@ class MenuCubit extends Cubit<MenuState> {
         break;
       case MenuRoutes.orderHistoryMenuRoute:
         page = const OrderHistoryMenuPage();
+        break;
+      case MenuRoutes.pointHistoryMenuRoute:
+        page = const PointHistoryMenuPage();
         break;
       case MenuRoutes.mainMenuRoute:
         page = const MainMenuPage();

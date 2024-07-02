@@ -8,6 +8,7 @@ class MenuRoutes {
   static const tegukMenuRoute = "/menu/teguk";
   static const favoriteMenuRoute = "/menu/favorite";
   static const orderHistoryMenuRoute = "/menu/order-history";
+  static const pointHistoryMenuRoute = "/menu/point-history";
 
   static const String initialRoute = locationMenuRoute;
 }

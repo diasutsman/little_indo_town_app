@@ -108,6 +108,16 @@ class MenuPage extends StatelessWidget {
                   ),
                 );
               }
+              if (state is PointHistoryMenuState) {
+                return Text(
+                  "Point History",
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20,
+                    fontFamily: Assets.fonts.normsPro,
+                  ),
+                );
+              }
               return const SizedBox();
             },
           ),

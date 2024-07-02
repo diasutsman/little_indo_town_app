@@ -20,3 +20,5 @@ final class MenuUrbanDurianState extends MenuState {}
 final class MenuTegukState extends MenuState {}
 
 final class OrderHistoryMenuState extends MenuState {}
+
+final class PointHistoryMenuState extends MenuState {}
