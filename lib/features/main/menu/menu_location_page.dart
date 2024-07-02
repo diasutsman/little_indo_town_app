@@ -5,7 +5,6 @@ import 'package:little_indo_town_app/configs/assets.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
 import 'package:little_indo_town_app/features/main/menu/cubit/menu_location_cubit.dart';
 import 'package:little_indo_town_app/features/main/menu/menu_location_item.dart';
-import 'package:little_indo_town_app/gen/strings.g.dart';
 
 class MenuLocationPage extends StatelessWidget {
   const MenuLocationPage({super.key});

@@ -1,15 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 import 'package:little_indo_town_app/configs/colors.dart';
-import 'package:little_indo_town_app/features/main/menu/bintang_menu/bintang_menu_detail_arguments.dart';
-import 'package:little_indo_town_app/features/main/menu/bintang_menu/bintang_menu_item.dart';
-import 'package:little_indo_town_app/features/main/menu/favorite/favorite_menu_item.dart';
-import 'package:little_indo_town_app/features/main/menu/menu_routes.dart';
-import 'package:little_indo_town_app/features/main/menu/order_history/order_history_menu_item.dart';
-import 'package:little_indo_town_app/features/main/menu/order_history/order_state_constants.dart';
 import 'package:little_indo_town_app/features/main/menu/point_history/point_history_menu_item.dart';
 import 'package:little_indo_town_app/features/main/menu/point_history/point_state_constants.dart';
-import 'package:responsive_grid/responsive_grid.dart';
 
 class PointHistoryMenuPage extends StatefulWidget {
   const PointHistoryMenuPage({super.key});
