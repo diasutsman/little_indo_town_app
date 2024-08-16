@@ -38,7 +38,7 @@ dependencies:
   slang_flutter: ^3.31.0
   google_fonts: ^6.2.1
   flutter_bloc: ^8.1.6
-  carousel_slider: ^4.2.1
+  carousel_slider: ^5.0.0
   dots_indicator: ^3.0.0
   equatable: ^2.0.5
   bloc: ^8.1.4

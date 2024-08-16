@@ -10,7 +10,8 @@ class HomeCarouselCubit extends Cubit<int> {
     emit(index);
   }
 
-  final CarouselController carouselController = CarouselController();
+  final CarouselSliderController carouselController =
+      CarouselSliderController();
 
   int get currentPage => state;
 
