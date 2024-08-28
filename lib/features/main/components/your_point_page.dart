@@ -13,6 +13,7 @@ class YourPointPage extends StatelessWidget {
     final MenuCubit menuPageCubit = context.read();
     return Scaffold(
       appBar: AppBar(
+        centerTitle: false,
         titleSpacing: 0,
         title: Text(
           "Your Point",

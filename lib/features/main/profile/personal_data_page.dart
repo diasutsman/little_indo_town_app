@@ -9,6 +9,7 @@ class PersonalDataPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: false,
         surfaceTintColor: colorTransparent,
         shadowColor: colorTransparent,
         backgroundColor: colorWhite,

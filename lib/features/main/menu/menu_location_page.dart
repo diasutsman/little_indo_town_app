@@ -14,6 +14,7 @@ class MenuLocationPage extends StatelessWidget {
     final MenuLocationCubit menuLocationCubit = context.read();
     return Scaffold(
       appBar: AppBar(
+        centerTitle: false,
         surfaceTintColor: colorTransparent,
         shadowColor: colorTransparent,
         scrolledUnderElevation: 0,

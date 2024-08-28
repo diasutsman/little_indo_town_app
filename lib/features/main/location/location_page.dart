@@ -15,6 +15,7 @@ class LocationPage extends StatelessWidget {
     final LocationCubit locationCubit = context.read();
     return Scaffold(
       appBar: AppBar(
+        centerTitle: false,
         surfaceTintColor: colorTransparent,
         shadowColor: colorTransparent,
         scrolledUnderElevation: 0,

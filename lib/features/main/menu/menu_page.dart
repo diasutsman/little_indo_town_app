@@ -46,6 +46,7 @@ class MenuPage extends StatelessWidget {
         drawer: const MenuDrawer(),
         endDrawer: const YourPointPage(),
         appBar: AppBar(
+          centerTitle: false,
           surfaceTintColor: colorTransparent,
           shadowColor: colorTransparent,
           scrolledUnderElevation: 0,

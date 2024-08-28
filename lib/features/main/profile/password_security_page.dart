@@ -12,6 +12,7 @@ class PasswordSecurityPage extends StatelessWidget {
     final ShowHidePasswordCubit showHidePasswordCubit = context.read();
     return Scaffold(
       appBar: AppBar(
+        centerTitle: false,
         surfaceTintColor: colorTransparent,
         shadowColor: colorTransparent,
         backgroundColor: colorWhite,
